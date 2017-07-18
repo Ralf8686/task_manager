@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import theme from '../../theme';
 import Logo from '../Logo/Logo';
 import BaseText from '../BaseText/BaseText';
 import Drawer from 'material-ui/Drawer';
@@ -17,7 +18,8 @@ import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
 
 const NavBarWrapper = styled.div`
   height: ${({ theme }) => theme.sizes.navBar};
-  background-color: ${({ theme }) => theme.colors.navBar};
+  background-color: ${({ theme, selected }) =>
+    selected ? theme.colors.selectedRow : theme.colors.navBar};
   display: flex;
   justify-content: space-between;
 `;
@@ -43,20 +45,21 @@ export default class NavBar extends Component {
   }
   handleToggle = () => this.setState({ open: !this.state.open });
   render() {
+    const color = this.props.isSelected ? '#000' : '#fff';
     return (
-      <NavBarWrapper>
+      <NavBarWrapper selected={this.props.isSelected}>
         <NavBarLeft>
           <Logo onClick={this.handleToggle} />
           <Drawer open={this.state.open}>
             <MenuItem>Menu Item</MenuItem>
             <MenuItem>Menu Item 2</MenuItem>
           </Drawer>
-          <PageTitle color="white" type="pageTitle">
+          <PageTitle color={color} type="pageTitle">
             ADMIN
           </PageTitle>
         </NavBarLeft>
         <NavBarRight>
-          <BaseText color="white" type="body">
+          <BaseText color={color} type="body">
             Erica
           </BaseText>
           <IconMenu
@@ -66,7 +69,7 @@ export default class NavBar extends Component {
               </IconButton>
             }
             iconStyle={{
-              color: '#ffffff'
+              color
             }}
             anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             targetOrigin={{ horizontal: 'right', vertical: 'bottom' }}
