@@ -10,6 +10,7 @@ class TaskListPage extends Component {
     super();
     this.changeQuery = this.changeQuery.bind(this);
     this.toggleItem = this.toggleItem.bind(this);
+    this.clearSelect = this.clearSelect.bind(this);
   }
   state = {
     selected: [],
@@ -17,6 +18,11 @@ class TaskListPage extends Component {
   };
   changeQuery(query) {
     this.setState({ query });
+  }
+  clearSelect() {
+    this.setState({
+      selected: []
+    });
   }
   toggleItem(id) {
     const { selected } = this.state;
@@ -36,7 +42,10 @@ class TaskListPage extends Component {
         <NavBar isSelected={this.state.selected.length !== 0} />
         {this.state.selected.length === 0
           ? <AppBar changeQuery={this.changeQuery} query={this.state.query} />
-          : <AppSelectedBar selected={this.state.selected} />}
+          : <AppSelectedBar
+              clearSelect={this.clearSelect}
+              selected={this.state.selected}
+            />}
         <Container style={{ paddingTop: 50 }}>
           <TaskList
             selected={this.state.selected}
