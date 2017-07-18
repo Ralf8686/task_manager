@@ -1,0 +1,558 @@
+[INFO  - 2017-07-15T17:36:14.813Z] GhostDriver - Main - running on port 43531
+[INFO  - 2017-07-15T17:36:15.241Z] Session [1a167b50-6984-11e7-8ca3-f7f7e4a1fc89] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T17:36:15.241Z] Session [1a167b50-6984-11e7-8ca3-f7f7e4a1fc89] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T17:36:15.241Z] Session [1a167b50-6984-11e7-8ca3-f7f7e4a1fc89] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T17:36:15.242Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 1a167b50-6984-11e7-8ca3-f7f7e4a1fc89
+[ERROR - 2017-07-15T17:36:17.336Z] Session [1a167b50-6984-11e7-8ca3-f7f7e4a1fc89] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T17:36:17.337Z] Session [1a167b50-6984-11e7-8ca3-f7f7e4a1fc89] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124365)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124552)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124811)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T17:36:18.356Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T17:58:09.517Z] GhostDriver - Main - running on port 47646
+[INFO  - 2017-07-15T17:58:09.695Z] Session [298ff090-6987-11e7-b4dc-bdf3303f4a42] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T17:58:09.695Z] Session [298ff090-6987-11e7-b4dc-bdf3303f4a42] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T17:58:09.695Z] Session [298ff090-6987-11e7-b4dc-bdf3303f4a42] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T17:58:09.695Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 298ff090-6987-11e7-b4dc-bdf3303f4a42
+[ERROR - 2017-07-15T17:58:12.049Z] Session [298ff090-6987-11e7-b4dc-bdf3303f4a42] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T17:58:12.049Z] Session [298ff090-6987-11e7-b4dc-bdf3303f4a42] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T17:58:14.861Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T17:58:24.664Z] GhostDriver - Main - running on port 28405
+[INFO  - 2017-07-15T17:58:24.852Z] Session [32990500-6987-11e7-96d5-0f6aa916e071] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T17:58:24.852Z] Session [32990500-6987-11e7-96d5-0f6aa916e071] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T17:58:24.852Z] Session [32990500-6987-11e7-96d5-0f6aa916e071] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T17:58:24.852Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 32990500-6987-11e7-96d5-0f6aa916e071
+[ERROR - 2017-07-15T17:58:27.483Z] Session [32990500-6987-11e7-96d5-0f6aa916e071] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T17:58:27.483Z] Session [32990500-6987-11e7-96d5-0f6aa916e071] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T17:58:30.265Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T17:59:05.692Z] GhostDriver - Main - running on port 23876
+[INFO  - 2017-07-15T17:59:05.884Z] Session [4b0e0180-6987-11e7-af3c-15356ae00e9b] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T17:59:05.885Z] Session [4b0e0180-6987-11e7-af3c-15356ae00e9b] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T17:59:05.885Z] Session [4b0e0180-6987-11e7-af3c-15356ae00e9b] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T17:59:05.885Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 4b0e0180-6987-11e7-af3c-15356ae00e9b
+[ERROR - 2017-07-15T17:59:08.193Z] Session [4b0e0180-6987-11e7-af3c-15356ae00e9b] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T17:59:08.193Z] Session [4b0e0180-6987-11e7-af3c-15356ae00e9b] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T17:59:12.463Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:00:27.722Z] GhostDriver - Main - running on port 23362
+[INFO  - 2017-07-15T18:00:27.932Z] Session [7bf58980-6987-11e7-9c05-51a72fd0fac2] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:00:27.932Z] Session [7bf58980-6987-11e7-9c05-51a72fd0fac2] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:00:27.932Z] Session [7bf58980-6987-11e7-9c05-51a72fd0fac2] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:00:27.932Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 7bf58980-6987-11e7-9c05-51a72fd0fac2
+[ERROR - 2017-07-15T18:00:30.298Z] Session [7bf58980-6987-11e7-9c05-51a72fd0fac2] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:00:30.298Z] Session [7bf58980-6987-11e7-9c05-51a72fd0fac2] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:00:34.562Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:09:51.367Z] GhostDriver - Main - running on port 10910
+[INFO  - 2017-07-15T18:09:51.537Z] Session [cbe4aec0-6988-11e7-8669-c34392ab8c10] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:09:51.537Z] Session [cbe4aec0-6988-11e7-8669-c34392ab8c10] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:09:51.537Z] Session [cbe4aec0-6988-11e7-8669-c34392ab8c10] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:09:51.537Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: cbe4aec0-6988-11e7-8669-c34392ab8c10
+[ERROR - 2017-07-15T18:09:54.618Z] Session [cbe4aec0-6988-11e7-8669-c34392ab8c10] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:09:54.618Z] Session [cbe4aec0-6988-11e7-8669-c34392ab8c10] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:09:59.906Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:10:42.500Z] GhostDriver - Main - running on port 24834
+[INFO  - 2017-07-15T18:10:42.719Z] Session [ea666fa0-6988-11e7-8527-61cc880259c7] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:10:42.719Z] Session [ea666fa0-6988-11e7-8527-61cc880259c7] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:10:42.719Z] Session [ea666fa0-6988-11e7-8527-61cc880259c7] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:10:42.719Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: ea666fa0-6988-11e7-8527-61cc880259c7
+[ERROR - 2017-07-15T18:10:45.000Z] Session [ea666fa0-6988-11e7-8527-61cc880259c7] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:10:45.000Z] Session [ea666fa0-6988-11e7-8527-61cc880259c7] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:10:49.277Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:16:22.365Z] GhostDriver - Main - running on port 13585
+[INFO  - 2017-07-15T18:16:22.512Z] Session [b4eebbb0-6989-11e7-9914-df36e2989390] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:16:22.512Z] Session [b4eebbb0-6989-11e7-9914-df36e2989390] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:16:22.512Z] Session [b4eebbb0-6989-11e7-9914-df36e2989390] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:16:22.512Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: b4eebbb0-6989-11e7-9914-df36e2989390
+[ERROR - 2017-07-15T18:16:24.864Z] Session [b4eebbb0-6989-11e7-9914-df36e2989390] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:16:24.864Z] Session [b4eebbb0-6989-11e7-9914-df36e2989390] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:16:29.140Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:17:03.962Z] GhostDriver - Main - running on port 28157
+[INFO  - 2017-07-15T18:17:04.178Z] Session [cdc49ce0-6989-11e7-8976-edeeb50df9ae] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:17:04.178Z] Session [cdc49ce0-6989-11e7-8976-edeeb50df9ae] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:17:04.178Z] Session [cdc49ce0-6989-11e7-8976-edeeb50df9ae] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:17:04.178Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: cdc49ce0-6989-11e7-8976-edeeb50df9ae
+[ERROR - 2017-07-15T18:17:06.466Z] Session [cdc49ce0-6989-11e7-8976-edeeb50df9ae] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:17:06.466Z] Session [cdc49ce0-6989-11e7-8976-edeeb50df9ae] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:17:12.965Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:17:41.623Z] GhostDriver - Main - running on port 44982
+[INFO  - 2017-07-15T18:17:41.826Z] Session [e43516d0-6989-11e7-be1d-6d915f00f4e6] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:17:41.826Z] Session [e43516d0-6989-11e7-be1d-6d915f00f4e6] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:17:41.826Z] Session [e43516d0-6989-11e7-be1d-6d915f00f4e6] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:17:41.826Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: e43516d0-6989-11e7-be1d-6d915f00f4e6
+[ERROR - 2017-07-15T18:17:44.375Z] Session [e43516d0-6989-11e7-be1d-6d915f00f4e6] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:17:44.375Z] Session [e43516d0-6989-11e7-be1d-6d915f00f4e6] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:17:50.892Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:18:20.510Z] GhostDriver - Main - running on port 31142
+[INFO  - 2017-07-15T18:18:20.718Z] Session [fb63b0a0-6989-11e7-9533-9737977f0311] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:18:20.718Z] Session [fb63b0a0-6989-11e7-9533-9737977f0311] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:18:20.718Z] Session [fb63b0a0-6989-11e7-9533-9737977f0311] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:18:20.719Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: fb63b0a0-6989-11e7-9533-9737977f0311
+[ERROR - 2017-07-15T18:18:23.004Z] Session [fb63b0a0-6989-11e7-9533-9737977f0311] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:18:23.004Z] Session [fb63b0a0-6989-11e7-9533-9737977f0311] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:18:33.548Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:21:34.882Z] GhostDriver - Main - running on port 47825
+[INFO  - 2017-07-15T18:21:35.075Z] Session [6f3c36f0-698a-11e7-ba41-63da6bd378c3] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:21:35.075Z] Session [6f3c36f0-698a-11e7-ba41-63da6bd378c3] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:21:35.075Z] Session [6f3c36f0-698a-11e7-ba41-63da6bd378c3] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:21:35.075Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 6f3c36f0-698a-11e7-ba41-63da6bd378c3
+[ERROR - 2017-07-15T18:21:37.402Z] Session [6f3c36f0-698a-11e7-ba41-63da6bd378c3] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:21:37.403Z] Session [6f3c36f0-698a-11e7-ba41-63da6bd378c3] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:21:49.117Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:30:14.185Z] GhostDriver - Main - running on port 25888
+[INFO  - 2017-07-15T18:30:14.365Z] Session [a4c1bba0-698b-11e7-9a8a-5b7dda1b30e5] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:30:14.365Z] Session [a4c1bba0-698b-11e7-9a8a-5b7dda1b30e5] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:30:14.366Z] Session [a4c1bba0-698b-11e7-9a8a-5b7dda1b30e5] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:30:14.366Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: a4c1bba0-698b-11e7-9a8a-5b7dda1b30e5
+[ERROR - 2017-07-15T18:30:16.682Z] Session [a4c1bba0-698b-11e7-9a8a-5b7dda1b30e5] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:30:16.682Z] Session [a4c1bba0-698b-11e7-9a8a-5b7dda1b30e5] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:30:28.386Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:31:03.966Z] GhostDriver - Main - running on port 45175
+[INFO  - 2017-07-15T18:31:04.126Z] Session [c26a5a90-698b-11e7-af1c-7dfefadc9393] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:31:04.126Z] Session [c26a5a90-698b-11e7-af1c-7dfefadc9393] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:31:04.126Z] Session [c26a5a90-698b-11e7-af1c-7dfefadc9393] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:31:04.126Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: c26a5a90-698b-11e7-af1c-7dfefadc9393
+[ERROR - 2017-07-15T18:31:06.601Z] Session [c26a5a90-698b-11e7-af1c-7dfefadc9393] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:31:06.601Z] Session [c26a5a90-698b-11e7-af1c-7dfefadc9393] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:31:07.914Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:32:21.520Z] GhostDriver - Main - running on port 7842
+[INFO  - 2017-07-15T18:32:21.872Z] Session [f0c173b0-698b-11e7-a222-f9f54bc3d3f3] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:32:21.872Z] Session [f0c173b0-698b-11e7-a222-f9f54bc3d3f3] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:32:21.872Z] Session [f0c173b0-698b-11e7-a222-f9f54bc3d3f3] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:32:21.872Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: f0c173b0-698b-11e7-a222-f9f54bc3d3f3
+[ERROR - 2017-07-15T18:32:24.341Z] Session [f0c173b0-698b-11e7-a222-f9f54bc3d3f3] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:32:24.341Z] Session [f0c173b0-698b-11e7-a222-f9f54bc3d3f3] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:32:25.647Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-15T18:33:38.740Z] GhostDriver - Main - running on port 7964
+[INFO  - 2017-07-15T18:33:38.959Z] Session [1eb3fea0-698c-11e7-8af3-4d34b98aa6f9] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-15T18:33:38.959Z] Session [1eb3fea0-698c-11e7-8af3-4d34b98aa6f9] - page.customHeaders:  - {}
+[INFO  - 2017-07-15T18:33:38.959Z] Session [1eb3fea0-698c-11e7-8af3-4d34b98aa6f9] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-15T18:33:38.959Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 1eb3fea0-698c-11e7-8af3-4d34b98aa6f9
+[ERROR - 2017-07-15T18:33:43.077Z] Session [1eb3fea0-698c-11e7-8af3-4d34b98aa6f9] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-15T18:33:43.077Z] Session [1eb3fea0-698c-11e7-8af3-4d34b98aa6f9] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:123177)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:124364)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:123042)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:124551)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:124810)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-15T18:33:58.787Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-16T15:16:35.827Z] GhostDriver - Main - running on port 14096
+[INFO  - 2017-07-16T15:16:36.184Z] Session [c2317230-6a39-11e7-9cc7-b91e89467574] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-16T15:16:36.184Z] Session [c2317230-6a39-11e7-9cc7-b91e89467574] - page.customHeaders:  - {}
+[INFO  - 2017-07-16T15:16:36.184Z] Session [c2317230-6a39-11e7-9cc7-b91e89467574] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-16T15:16:36.184Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: c2317230-6a39-11e7-9cc7-b91e89467574
+[ERROR - 2017-07-16T15:16:38.627Z] Session [c2317230-6a39-11e7-9cc7-b91e89467574] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-16T15:16:38.627Z] Session [c2317230-6a39-11e7-9cc7-b91e89467574] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:125257)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:126444)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:125122)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:126633)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:126893)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-16T15:16:54.394Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-07-16T18:51:31.329Z] GhostDriver - Main - running on port 1459
+[INFO  - 2017-07-16T18:51:31.503Z] Session [c8671fb0-6a57-11e7-a09b-11c46337b2b2] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-16T18:51:31.503Z] Session [c8671fb0-6a57-11e7-a09b-11c46337b2b2] - page.customHeaders:  - {}
+[INFO  - 2017-07-16T18:51:31.503Z] Session [c8671fb0-6a57-11e7-a09b-11c46337b2b2] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-16T18:51:31.503Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: c8671fb0-6a57-11e7-a09b-11c46337b2b2
+[ERROR - 2017-07-16T18:51:35.502Z] Session [c8671fb0-6a57-11e7-a09b-11c46337b2b2] - page.onError - msg: ReferenceError: Can't find variable: Map
+[ERROR - 2017-07-16T18:51:35.502Z] Session [c8671fb0-6a57-11e7-a09b-11c46337b2b2] - page.onError - stack:
+  KeyRegistry (http://localhost:3001/static/js/bundle.js:6400)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:6426)
+  ./node_modules/@angular/core/@angular/core.es5.js (http://localhost:3001/static/js/bundle.js:19695)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./node_modules/@angular/http/@angular/http.es5.js (http://localhost:3001/static/js/bundle.js:19742)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/api/api.js (http://localhost:3001/static/js/bundle.js:125257)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/components/TaskList/TaskList.js (http://localhost:3001/static/js/bundle.js:126444)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/App.js (http://localhost:3001/static/js/bundle.js:125122)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  ./src/index.js (http://localhost:3001/static/js/bundle.js:126633)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  fn (http://localhost:3001/static/js/bundle.js:86)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:126893)
+  __webpack_require__ (http://localhost:3001/static/js/bundle.js:660)
+  (anonymous function) (http://localhost:3001/static/js/bundle.js:709)
+[INFO  - 2017-07-16T18:51:51.244Z] ShutdownReqHand - _handle - About to shutdown

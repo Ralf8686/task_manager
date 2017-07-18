@@ -1,0 +1,46 @@
+22:15:42.730 INFO - Selenium build info: version: '3.4.0', revision: 'unknown'
+22:15:42.730 INFO - Launching a standalone Selenium Server
+2017-07-16 22:15:42.747:INFO::main: Logging initialized @244ms to org.seleniumhq.jetty9.util.log.StdErrLog
+22:15:42.805 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
+ registration capabilities Capabilities [{ensureCleanSession=true, browserName=internet explorer, version=, platform=WINDOWS}] does not match the current platform MAC
+22:15:42.805 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
+ registration capabilities Capabilities [{browserName=MicrosoftEdge, version=, platform=WINDOWS}] does not match the current platform MAC
+22:15:42.805 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+22:15:42.805 INFO - Driver provider com.opera.core.systems.OperaDriver registration is skipped:
+Unable to create new instances on this machine.
+22:15:42.805 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+22:15:42.805 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+2017-07-16 22:15:42.843:INFO:osjs.Server:main: jetty-9.4.3.v20170317
+2017-07-16 22:15:42.875:INFO:osjsh.ContextHandler:main: Started o.s.j.s.ServletContextHandler@59f99ea{/,null,AVAILABLE}
+2017-07-16 22:15:42.904:INFO:osjs.AbstractConnector:main: Started ServerConnector@553f17c{HTTP/1.1,[http/1.1]}{0.0.0.0:4444}
+2017-07-16 22:15:42.904:INFO:osjs.Server:main: Started @402ms
+22:15:42.904 INFO - Selenium Server is up and running
+22:15:43.103 INFO - SessionCleaner initialized with insideBrowserTimeout 0 and clientGoneTimeout 1800000 polling every 180000
+22:15:43.128 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, name=Test, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
+22:15:43.147 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, name=Test, browserName=chrome, javascriptEnabled=true, platform=ANY}]
+Starting ChromeDriver 2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262) on port 17249
+Only local connections are allowed.
+22:15:44.179 INFO - Detected dialect: OSS
+22:15:44.196 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, name=Test, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
+22:15:44.211 INFO - Executing: [get: http://localhost:3001])
+22:15:44.930 INFO - Done: [get: http://localhost:3001]
+22:15:45.942 INFO - Executing: [find elements: By.cssSelector: body])
+22:15:45.977 INFO - Done: [find elements: By.cssSelector: body]
+22:15:45.983 INFO - Executing: [find elements: By.cssSelector: .t-task-list])
+22:15:46.004 INFO - Done: [find elements: By.cssSelector: .t-task-list]
+22:15:46.008 INFO - Executing: [find elements: By.cssSelector: #Search])
+22:15:46.028 INFO - Done: [find elements: By.cssSelector: #Search]
+22:15:46.032 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
+22:15:46.053 INFO - Done: [find elements: By.cssSelector: .t-task-item]
+22:15:46.061 INFO - Executing: [find element: By.cssSelector: #SearchToggleButton])
+22:15:46.080 INFO - Done: [find element: By.cssSelector: #SearchToggleButton]
+22:15:46.082 INFO - Executing: [click: 6 [[ChromeDriver: chrome on MAC (7ab6420779b4b7cf45a522661037cc7b)] -> css selector: #SearchToggleButton]])
+22:15:46.149 INFO - Done: [click: 6 [[ChromeDriver: chrome on MAC (7ab6420779b4b7cf45a522661037cc7b)] -> css selector: #SearchToggleButton]]
+22:15:47.158 INFO - Executing: [find element: By.cssSelector: #Search])
+22:15:47.177 INFO - Done: [find element: By.cssSelector: #Search]
+22:15:47.181 INFO - Executing: [send keys: 2 [[ChromeDriver: chrome on MAC (7ab6420779b4b7cf45a522661037cc7b)] -> css selector: #Search], [s, t, u, b]])
+22:15:47.335 INFO - Done: [send keys: 2 [[ChromeDriver: chrome on MAC (7ab6420779b4b7cf45a522661037cc7b)] -> css selector: #Search], [s, t, u, b]]
+22:15:48.344 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
+22:15:48.355 INFO - Done: [find elements: By.cssSelector: .t-task-item]
+22:15:48.359 INFO - Executing: [delete session: 6f8cf5fa-a589-4707-bc85-cd5df9150935])
+22:15:48.433 INFO - Done: [delete session: 6f8cf5fa-a589-4707-bc85-cd5df9150935]
