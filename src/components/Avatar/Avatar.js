@@ -26,7 +26,7 @@ export const types = {
 };
 
 export default ({ type }) => {
-  const currentType = types[type] || type.Default;
+  const currentType = types[type] || types.Default;
   return (
     <Avatar
       size={42}
