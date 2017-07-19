@@ -2,7 +2,7 @@ import React from 'react';
 import { TableRow, TableRowColumn } from 'material-ui/Table';
 import Avatar from '../Avatar/Avatar';
 import format from 'date-fns/format';
-import getDays from '../../utils/getDays';
+import getDays from '../../utils/getDays/getDays';
 
 const TaskItem = ({
   onClick,
