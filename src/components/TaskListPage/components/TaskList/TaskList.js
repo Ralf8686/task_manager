@@ -1,7 +1,7 @@
 import React from 'react';
-import { ApiService } from '../../api/api';
+import { ApiService } from '../../../../api/api';
 import { lifecycle, compose, mapProps } from 'recompose';
-import TaskItem from './TaskItem';
+import TaskItem from '../TaskItem/TaskItem';
 import {
   Table,
   TableBody,

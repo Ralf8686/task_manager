@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import NavBar from '../NavBar/NabBar';
-import TaskList from '../TaskList/TaskList';
+import TaskList from './components/TaskList/TaskList';
 import Container from '../Container/Container';
-import AppBar from '../AppBar/AppBar';
-import AppSelectedBar from '../AppSelectedBar/AppSelectedBar';
+import TaskListBar from './components/TaskListBar/TaskListBar';
 
 class TaskListPage extends Component {
   constructor() {
@@ -40,12 +39,12 @@ class TaskListPage extends Component {
     return (
       <div>
         <NavBar isSelected={this.state.selected.length !== 0} />
-        {this.state.selected.length === 0
-          ? <AppBar changeQuery={this.changeQuery} query={this.state.query} />
-          : <AppSelectedBar
-              clearSelect={this.clearSelect}
-              selected={this.state.selected}
-            />}
+        <TaskListBar
+          changeQuery={this.changeQuery}
+          query={this.state.query}
+          clearSelect={this.clearSelect}
+          selected={this.state.selected}
+        />
         <Container style={{ paddingTop: 50 }}>
           <TaskList
             selected={this.state.selected}
