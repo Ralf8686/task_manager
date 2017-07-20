@@ -38,7 +38,7 @@ const AddButton = styled(FloatingActionButton)`
 
 const AppBarControls = styled.div``;
 
-export default ({ changeQuery, query, selected, clearSelect }) => {
+export default ({ changeQuery, query, selected = [], clearSelect }) => {
   const haveSelect = selected.length !== 0;
   return (
     <AppBarWrapper selected={haveSelect}>
