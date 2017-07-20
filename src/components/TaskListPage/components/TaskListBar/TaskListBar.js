@@ -55,7 +55,7 @@ export default ({ changeQuery, query, selected = [], clearSelect }) => {
             </BaseText>
             <AppBarControls>
               {selected.length === 1
-                ? <IconButton>
+                ? <IconButton className="t-edit-button">
                     <Create />
                   </IconButton>
                 : null}
