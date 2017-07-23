@@ -6,7 +6,6 @@ import hex2rgb from 'hex2rgb';
 import { mount } from 'enzyme';
 
 describe('Avatar', () => {
-  // TODO Надо ли проверять внутренний текст?
   it('Payload Monitoring Report', () => {
     const { text, bg, color } = types['Payload Monitoring Report'];
     const wrapper = mount(
