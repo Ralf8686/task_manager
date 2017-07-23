@@ -3,29 +3,52 @@ import NavBar from '../common/NavBar/NabBar';
 import TaskList from './components/TaskList/TaskList';
 import Container from '../common/Container/Container';
 import TaskListBar from './components/TaskListBar/TaskListBar';
+import DeleteDialog from './components/DeleteDialog/DeleteDialog';
+import DeleteSnackbar from './components/DeleteSnackbar/DeleteSnackbar';
 import api from '../../api/api';
 
 class TaskListPage extends Component {
   constructor() {
     super();
+    this.selectedСache = [];
+    this.undoDuration = 4000;
     this.changeQuery = this.changeQuery.bind(this);
     this.toggleItem = this.toggleItem.bind(this);
     this.clearSelect = this.clearSelect.bind(this);
     this.deleteTasks = this.deleteTasks.bind(this);
-    this.fetchData = this.fetchData.bind(this);
+    this.startDeleteTask = this.startDeleteTask.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
+    this.toggleSnack = this.toggleSnack.bind(this);
+    this.undoDelete = this.undoDelete.bind(this);
   }
   state = {
     selected: [],
     data: [],
+    deleteDialog: false,
+    deleteSnack: false,
     query: ''
   };
+  startDeleteTask() {
+    this.toggleModal();
+    this.toggleSnack();
+    this.selectedСache = [...this.state.selected];
+    this.clearSelect();
+  }
+  undoDelete() {
+    this.toggleSnack(false);
+    this.setState({
+      selected: [...this.selectedСache]
+    });
+    this.selectedСache = [];
+  }
   async deleteTasks() {
-    const ids = this.state.selected;
+    const ids = this.selectedСache;
     await api.deleteTasks(ids);
     this.setState({
       data: this.state.data.filter(({ id }) => !ids.includes(id)),
       selected: []
     });
+    this.selectedСache = [];
   }
   changeQuery(query) {
     this.setState({ query });
@@ -35,11 +58,8 @@ class TaskListPage extends Component {
       selected: []
     });
   }
-  fetchData() {
-    api.getTasks().then(data => this.setState({ data }));
-  }
   componentWillMount() {
-    this.fetchData();
+    api.getTasks().then(data => this.setState({ data }));
   }
   toggleItem(id) {
     const { selected } = this.state;
@@ -53,6 +73,19 @@ class TaskListPage extends Component {
       });
     }
   }
+  toggleModal() {
+    this.setState({
+      deleteDialog: !this.state.deleteDialog
+    });
+  }
+  toggleSnack(needDelete) {
+    if (needDelete !== false && this.state.deleteSnack === true) {
+      this.deleteTasks();
+    }
+    this.setState({
+      deleteSnack: !this.state.deleteSnack
+    });
+  }
   render() {
     return (
       <div>
@@ -62,16 +95,29 @@ class TaskListPage extends Component {
           query={this.state.query}
           clearSelect={this.clearSelect}
           selected={this.state.selected}
-          deleteTasks={this.deleteTasks}
+          deleteTasks={this.toggleModal}
         />
         <Container style={{ paddingTop: 50 }}>
           <TaskList
-            data={this.state.data}
+            data={this.state.data.filter(
+              ({ id }) => !this.selectedСache.includes(id)
+            )}
             selected={this.state.selected}
             toggleItem={this.toggleItem}
             query={this.state.query}
           />
         </Container>
+        <DeleteDialog
+          open={this.state.deleteDialog}
+          onHandleClose={this.toggleModal}
+          deleteTasks={this.startDeleteTask}
+        />
+        <DeleteSnackbar
+          open={this.state.deleteSnack}
+          undoDuration={this.undoDuration}
+          handleActionTouchTap={this.undoDelete}
+          handleRequestClose={this.toggleSnack}
+        />
       </div>
     );
   }
