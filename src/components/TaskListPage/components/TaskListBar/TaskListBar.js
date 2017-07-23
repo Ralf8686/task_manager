@@ -39,7 +39,13 @@ const AddButton = styled(FloatingActionButton)`
 
 const AppBarControls = styled.div``;
 
-export default ({ changeQuery, query, selected = [], clearSelect }) => {
+export default ({
+  changeQuery,
+  query,
+  selected = [],
+  clearSelect,
+  deleteTasks
+}) => {
   const haveSelect = selected.length !== 0;
   return (
     <AppBarWrapper selected={haveSelect}>
@@ -56,13 +62,13 @@ export default ({ changeQuery, query, selected = [], clearSelect }) => {
             </BaseText>
             <AppBarControls>
               {selected.length === 1
-                ? <Link to={`/edit/${selected[0].id}`}>
+                ? <Link to={`/edit/${selected[0]}`}>
                     <IconButton className="t-edit-button">
                       <Create />
                     </IconButton>
                   </Link>
                 : null}
-              <IconButton>
+              <IconButton onClick={deleteTasks}>
                 <Delete />
               </IconButton>
             </AppBarControls>

@@ -1,6 +1,5 @@
 import React from 'react';
-import api from '../../../../api/api';
-import { lifecycle, compose, mapProps } from 'recompose';
+import { compose, mapProps } from 'recompose';
 import TaskItem from '../TaskItem/TaskItem';
 import {
   Table,
@@ -37,12 +36,6 @@ export const TaskList = ({ data = [], toggleItem, selected }) =>
   </Table>;
 
 export default compose(
-  lifecycle({
-    componentWillMount() {
-      this.setState({ data: [] });
-      api.getTasks().then(data => this.setState({ data }));
-    }
-  }),
   mapProps(({ data, query, ...props }) => {
     if (query) {
       return {
