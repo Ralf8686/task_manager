@@ -1,19 +1,28 @@
 import React from 'react';
+import ThemeProvider from '../../../ThemeProvider/ThemeProvider';
 import TaskListBar from './TaskListBar';
-import BaseText from '../../../common/BaseText/BaseText';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 describe('TaskListBar', () => {
   it('Without selected', () => {
-    const bar = shallow(<TaskListBar />);
-    expect(bar.find(BaseText).children().text()).toEqual('AUTOMATED TASKS');
+    const bar = mount(
+      <ThemeProvider>
+        <TaskListBar />
+      </ThemeProvider>
+    );
+    expect(bar.find('.t-bar-title').text()).toBe('AUTOMATED TASKS');
   });
-  it('Show edit button', () => {
+  it('One selected', () => {
     const bar = shallow(<TaskListBar selected={[1]} />);
+    expect(bar.find('.t-bar-title').children().first().text()).toBe('1');
+    expect(bar.find('.t-bar-title').children().last().text()).toBe(' SELECTED');
+    expect(bar.find('.t-edit-button').length).toEqual(1);
     expect(bar.find('.t-edit-button').length).toEqual(1);
   });
-  it('Hide edit button', () => {
+  it('Many selected', () => {
     const bar = shallow(<TaskListBar selected={[1, 2]} />);
+    expect(bar.find('.t-bar-title').children().first().text()).toBe('2');
+    expect(bar.find('.t-bar-title').children().last().text()).toBe(' SELECTED');
     expect(bar.find('.t-edit-button').length).toEqual(0);
   });
 });

@@ -51,7 +51,7 @@ export default ({ changeQuery, query, selected = [], clearSelect }) => {
             >
               <Close />
             </IconButton>
-            <BaseText type="appTitle">
+            <BaseText type="appTitle" className="t-bar-title">
               {selected.length} SELECTED
             </BaseText>
             <AppBarControls>
@@ -71,7 +71,7 @@ export default ({ changeQuery, query, selected = [], clearSelect }) => {
             <AddButton>
               <ContentAdd />
             </AddButton>
-            <BaseText type="appTitle" color="white">
+            <BaseText type="appTitle" color="white" className="t-bar-title">
               AUTOMATED TASKS
             </BaseText>
             <AppBarControls>
