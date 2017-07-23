@@ -6,7 +6,8 @@ import getDays from '../../../../utils/getDays/getDays';
 
 const TaskItem = ({
   onClick,
-  item: { type, id, title, timeZone, reportTime, repeat, isSelected }
+  selectMode,
+  item: { type, id, title, timeZone, reportTime, repeat, isSelected, enabled }
 }) => {
   return (
     <TableRow
@@ -14,6 +15,9 @@ const TaskItem = ({
       className="t-task-item"
       displayBorder={false}
       striped={isSelected}
+      style={{
+        color: enabled ? '#000' : '#ccc'
+      }}
     >
       <TableRowColumn
         style={{
@@ -22,7 +26,7 @@ const TaskItem = ({
           paddingRight: 30
         }}
       >
-        <Avatar type={type} />
+        <Avatar selectMode={selectMode} isSelected={isSelected} type={type} />
       </TableRowColumn>
       <TableRowColumn>
         {title}

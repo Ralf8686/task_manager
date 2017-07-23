@@ -1,5 +1,8 @@
 import React from 'react';
 import Avatar from 'material-ui/Avatar';
+import IconButton from 'material-ui/IconButton';
+import Check from 'material-ui/svg-icons/navigation/check';
+import theme from '../../../../theme';
 import BaseText from '../../../common/BaseText/BaseText';
 
 export const types = {
@@ -25,8 +28,23 @@ export const types = {
   }
 };
 
-export default ({ type }) => {
+export default ({ type, selectMode, isSelected }) => {
   const currentType = types[type] || types.Default;
+  if (selectMode) {
+    return (
+      <IconButton
+        style={{
+          width: 42,
+          height: 42,
+          borderRadius: '50%',
+          padding: 0,
+          border: `1px solid ${theme.colors.selectedItem}`
+        }}
+      >
+        {isSelected ? <Check color={theme.colors.selectedItem} /> : null}
+      </IconButton>
+    );
+  }
   return (
     <Avatar
       size={42}
