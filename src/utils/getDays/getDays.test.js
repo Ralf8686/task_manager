@@ -5,7 +5,11 @@ describe('Get days', () => {
     expect(getDays([1])).toBe('Mon');
   });
 
-  it('with Weekend', () => {
+  it('with some days', () => {
+    expect(getDays([1, 2])).toBe('Mon, Tue');
+  });
+
+  test.only('with Weekend', () => {
     expect(getDays([6, 7])).toBe('Weekend');
   });
 

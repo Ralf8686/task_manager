@@ -8,7 +8,7 @@ import { mockData } from './mock-data';
 
 let fakeStartId = 1000;
 
-export class ApiService {
+class ApiService {
   constructor() {
     this.http = Http;
   }
@@ -118,3 +118,5 @@ export class ApiService {
     });
   }
 }
+
+export default new ApiService();

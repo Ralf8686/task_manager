@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import NavBar from '../NavBar/NabBar';
+import NavBar from '../common/NavBar/NabBar';
 import TaskList from './components/TaskList/TaskList';
-import Container from '../Container/Container';
+import Container from '../common/Container/Container';
 import TaskListBar from './components/TaskListBar/TaskListBar';
 
 class TaskListPage extends Component {

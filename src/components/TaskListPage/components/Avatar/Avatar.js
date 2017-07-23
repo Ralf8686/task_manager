@@ -1,6 +1,6 @@
 import React from 'react';
 import Avatar from 'material-ui/Avatar';
-import BaseText from '../../../BaseText/BaseText';
+import BaseText from '../../../common/BaseText/BaseText';
 
 export const types = {
   'Payload Monitoring Report': {

@@ -1,6 +1,6 @@
 import React from 'react';
 import TaskListBar from './TaskListBar';
-import BaseText from '../../../BaseText/BaseText';
+import BaseText from '../../../common/BaseText/BaseText';
 import { shallow } from 'enzyme';
 
 describe('TaskListBar', () => {

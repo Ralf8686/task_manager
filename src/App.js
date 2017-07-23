@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { ThemeProvider, injectGlobal } from 'styled-components';
-import theme from './theme';
+import { injectGlobal } from 'styled-components';
+import ThemeProvider from './components/ThemeProvider/ThemeProvider';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TaskListPage from './components/TaskListPage/TaskListPage';
+import TaskEdit from './components/TaskEdit/TaskEdit';
 
 // eslint-disable-next-line
 injectGlobal`
@@ -14,10 +15,13 @@ injectGlobal`
 class App extends Component {
   render() {
     return (
-      <ThemeProvider theme={theme}>
-        <MuiThemeProvider>
-          <TaskListPage />
-        </MuiThemeProvider>
+      <ThemeProvider>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" exact component={TaskListPage} />
+            <Route path="/edit/:id" component={TaskEdit} />
+          </Switch>
+        </BrowserRouter>
       </ThemeProvider>
     );
   }

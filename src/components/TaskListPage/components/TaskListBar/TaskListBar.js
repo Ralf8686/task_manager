@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import BaseText from '../../../BaseText/BaseText';
-import AppBarContainer from '../../../AppBarContainer/AppBarContainer';
+import { Link } from 'react-router-dom';
+import BaseText from '../../../common/BaseText/BaseText';
+import AppBarContainer from '../../../common/AppBarContainer/AppBarContainer';
 import IconButton from 'material-ui/IconButton';
 import Close from 'material-ui/svg-icons/navigation/close';
 import Create from 'material-ui/svg-icons/content/create';
@@ -9,7 +10,7 @@ import Delete from 'material-ui/svg-icons/action/delete';
 
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-import SearchControl from '../../../SearchControl/SearchControl';
+import SearchControl from '../../../common/SearchControl/SearchControl';
 
 const AppBarWrapper = styled.div`
   background: ${({ theme, selected }) =>
@@ -55,9 +56,11 @@ export default ({ changeQuery, query, selected = [], clearSelect }) => {
             </BaseText>
             <AppBarControls>
               {selected.length === 1
-                ? <IconButton className="t-edit-button">
-                    <Create />
-                  </IconButton>
+                ? <Link to={`/edit/${selected[0].id}`}>
+                    <IconButton className="t-edit-button">
+                      <Create />
+                    </IconButton>
+                  </Link>
                 : null}
               <IconButton>
                 <Delete />

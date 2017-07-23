@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApiService } from '../../../../api/api';
+import api from '../../../../api/api';
 import { lifecycle, compose, mapProps } from 'recompose';
 import TaskItem from '../TaskItem/TaskItem';
 import {
@@ -9,8 +9,6 @@ import {
   TableHeaderColumn,
   TableRow
 } from 'material-ui/Table';
-
-const api = new ApiService();
 
 export const TaskList = ({ data = [], toggleItem, selected }) =>
   <Table>

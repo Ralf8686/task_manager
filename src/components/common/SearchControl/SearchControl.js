@@ -5,7 +5,7 @@ import ActionSearch from 'material-ui/svg-icons/action/search';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import TextField from 'material-ui/TextField';
 import { withState, compose } from 'recompose';
-import theme from '../../theme';
+import theme from '../../../theme';
 
 const SearchControlWrapper = styled.div`
   display: flex;
