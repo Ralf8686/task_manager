@@ -51,7 +51,7 @@ export default ({ type, selectMode, isSelected }) => {
       color={currentType.color}
       backgroundColor={currentType.bg}
     >
-      <BaseText type="avatar">
+      <BaseText color="inherit" type="avatar">
         {currentType.text}
       </BaseText>
     </Avatar>

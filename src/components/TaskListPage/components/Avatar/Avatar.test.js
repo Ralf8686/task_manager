@@ -1,6 +1,8 @@
 import React from 'react';
 import ThemeProvider from '../../../ThemeProvider/ThemeProvider';
 import BaseText from '../../../common/BaseText/BaseText';
+import IconButton from 'material-ui/IconButton';
+import Check from 'material-ui/svg-icons/navigation/check';
 import Avatar, { types } from './Avatar';
 import hex2rgb from 'hex2rgb';
 import { mount } from 'enzyme';
@@ -30,5 +32,26 @@ describe('Avatar', () => {
     expect(Ring.style['background-color']).toBe(hex2rgb(bg).rgbString);
     expect(Ring.style['color']).toBe(hex2rgb(color).rgbString);
     expect(wrapper.find(BaseText).text()).toBe(text);
+  });
+
+  it('Select mode', () => {
+    const { text, bg, color } = types.Default;
+    const wrapper = mount(
+      <ThemeProvider>
+        <Avatar selectMode={true} />
+      </ThemeProvider>
+    );
+    expect(wrapper.find(IconButton).length).toBe(1);
+    expect(wrapper.find(Check).length).toBe(0);
+  });
+  it('Select mode selected', () => {
+    const { text, bg, color } = types.Default;
+    const wrapper = mount(
+      <ThemeProvider>
+        <Avatar selectMode={true} isSelected={true} />
+      </ThemeProvider>
+    );
+    expect(wrapper.find(IconButton).length).toBe(1);
+    expect(wrapper.find(Check).length).toBe(1);
   });
 });
