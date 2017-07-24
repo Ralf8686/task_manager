@@ -6,7 +6,7 @@ import Menu from '../Menu/Menu';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 
-const NavBarWrapper = styled.div`
+export const NavBarWrapper = styled.div`
   height: ${({ theme }) => theme.sizes.navBar};
   background-color: ${({ theme, selected }) =>
     selected ? theme.colors.selectedRow : theme.colors.navBar};
@@ -24,7 +24,7 @@ const NavBarRight = styled.div`
   align-items: center;
 `;
 
-const PageTitle = styled(BaseText)`
+export const PageTitle = styled(BaseText)`
   margin-left: 30px;
 `;
 
@@ -39,7 +39,7 @@ export default class NavBar extends Component {
     return (
       <NavBarWrapper selected={this.props.isSelected}>
         <NavBarLeft>
-          <Logo onClick={this.handleToggle} />
+          <Logo className="t-logo" onClick={this.handleToggle} />
           <Drawer open={this.state.open}>
             <MenuItem>Menu Item</MenuItem>
             <MenuItem>Menu Item 2</MenuItem>
