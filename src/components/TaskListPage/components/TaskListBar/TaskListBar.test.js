@@ -1,6 +1,7 @@
 import React from 'react';
 import ThemeProvider from '../../../ThemeProvider/ThemeProvider';
-import TaskListBar from './TaskListBar';
+import TaskListBar, { AppBarWrapper } from './TaskListBar';
+import { MemoryRouter } from 'react-router-dom';
 import { mount, shallow } from 'enzyme';
 
 describe('TaskListBar', () => {
@@ -11,13 +12,26 @@ describe('TaskListBar', () => {
       </ThemeProvider>
     );
     expect(bar.find('.t-bar-title').text()).toBe('AUTOMATED TASKS');
+    expect(bar.find(AppBarWrapper)).toHaveStyleRule(
+      'background-color',
+      '#223C6E'
+    );
   });
   it('One selected', () => {
-    const bar = shallow(<TaskListBar selected={[1]} />);
-    expect(bar.find('.t-bar-title').children().first().text()).toBe('1');
-    expect(bar.find('.t-bar-title').children().last().text()).toBe(' SELECTED');
+    const bar = mount(
+      <MemoryRouter>
+        <ThemeProvider>
+          <TaskListBar selected={[1]} />
+        </ThemeProvider>
+      </MemoryRouter>
+    );
+    expect(bar.find('.t-bar-title').text()).toBe('1 SELECTED');
     expect(bar.find('.t-edit-button').length).toEqual(1);
     expect(bar.find('.t-edit-button').length).toEqual(1);
+    expect(bar.find(AppBarWrapper)).toHaveStyleRule(
+      'background-color',
+      '#B2EBF2'
+    );
   });
   it('Many selected', () => {
     const bar = shallow(<TaskListBar selected={[1, 2]} />);

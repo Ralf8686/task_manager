@@ -12,8 +12,8 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import SearchControl from '../../../common/SearchControl/SearchControl';
 
-const AppBarWrapper = styled.div`
-  background: ${({ theme, selected }) =>
+export const AppBarWrapper = styled.div`
+  background-color: ${({ theme, selected }) =>
     selected ? theme.colors.selectedRow : theme.colors.appBar};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.32);
 `;
