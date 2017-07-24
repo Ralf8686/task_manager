@@ -52,6 +52,7 @@ export default ({
       {haveSelect
         ? <AppBarContainer>
             <IconButton
+              className="t-bar-clear-selected"
               onClick={clearSelect}
               style={{ position: 'absolute', left: 0 }}
             >
@@ -68,7 +69,7 @@ export default ({
                     </IconButton>
                   </Link>
                 : null}
-              <IconButton onClick={deleteTasks}>
+              <IconButton className="t-bar-delete-task" onClick={deleteTasks}>
                 <Delete />
               </IconButton>
             </AppBarControls>
