@@ -1,8 +1,10 @@
 const Days = ['', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
 
 export default (days = []) => {
+  const len = days.length;
+  if (len === 0) return '';
+  if (!Array.isArray(days)) return '';
   const sortDays = days.sort();
-  const len = sortDays.length;
   const firstDay = sortDays[0];
   const lastDay = sortDays[len - 1];
   if (len === 2 && firstDay === 6 && lastDay === 7) {

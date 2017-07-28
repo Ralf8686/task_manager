@@ -58,7 +58,7 @@ class TaskListPage extends Component {
       selected: []
     });
   }
-  componentWillMount() {
+  async componentWillMount() {
     api.getTasks().then(data => this.setState({ data }));
   }
   toggleItem(id) {
@@ -87,6 +87,9 @@ class TaskListPage extends Component {
     });
   }
   render() {
+    const data = this.state.data.filter(
+      ({ id }) => !this.selectedСache.includes(id)
+    );
     return (
       <div>
         <NavBar isSelected={this.state.selected.length !== 0} />
@@ -99,9 +102,7 @@ class TaskListPage extends Component {
         />
         <Container style={{ paddingTop: 50 }}>
           <TaskList
-            data={this.state.data.filter(
-              ({ id }) => !this.selectedСache.includes(id)
-            )}
+            data={data}
             selected={this.state.selected}
             toggleItem={this.toggleItem}
             query={this.state.query}

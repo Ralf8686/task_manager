@@ -43,23 +43,26 @@ export const TaskList = ({ data = [], toggleItem, selectMode }) => {
   );
 };
 
-export default compose(
-  mapProps(({ data, query, ...props }) => {
-    return {
-      ...props,
-      data: query
-        ? data.filter(({ title }) =>
-            title.toLowerCase().includes(query.toLowerCase())
-          )
-        : data
-    };
-  }),
-  mapProps(({ data, selected, ...props }) => ({
+export function filterTasks({ data, query, ...props }) {
+  return {
+    ...props,
+    data: query
+      ? data.filter(({ title }) =>
+          title.toLowerCase().includes(query.toLowerCase())
+        )
+      : data
+  };
+}
+
+export function markSelected({ data, selected = [], ...props }) {
+  return {
     ...props,
     data: data.map(task => ({
       ...task,
       isSelected: selected.includes(task.id)
     })),
     selectMode: selected.length !== 0
-  }))
-)(TaskList);
+  };
+}
+
+export default compose(mapProps(filterTasks), mapProps(markSelected))(TaskList);

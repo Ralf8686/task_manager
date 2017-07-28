@@ -18,10 +18,14 @@ describe('Get days', () => {
   });
 
   it('with zero elements', () => {
-    expect(getDays([])).toBe('');
+    expect(getDays([])).toEqual('');
   });
 
   it('with empty arguments', () => {
-    expect(getDays()).toBe('');
+    expect(getDays()).toEqual('');
+  });
+
+  it('with not array arguments', () => {
+    expect(getDays({})).toEqual('');
   });
 });

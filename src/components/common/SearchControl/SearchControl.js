@@ -11,7 +11,7 @@ const SearchControlWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
-const SearchField = styled.div`
+export const SearchField = styled.div`
   width: ${({ isOpen }) => (isOpen ? '260px' : '0')};
   transition: padding, width .3s ease;
   display: flex;
@@ -23,18 +23,19 @@ const SearchField = styled.div`
 
 const IconStyle = { width: 24, height: 24, padding: 0 };
 
-const SearchControl = ({ isOpen, toggle, value, onChange }) =>
+export const SearchControl = ({ isOpen, toggle, value, onChange }) =>
   <SearchControlWrapper>
     <IconButton
-      id="SearchToggleButton"
-      onTouchTap={() => toggle(!isOpen)}
+      className="t-search-control-toggle"
+      onClick={() => toggle(!isOpen)}
       style={IconStyle}
     >
       <ActionSearch color="#fff" />
     </IconButton>
     <SearchField isOpen={isOpen}>
       <TextField
-        id="Search"
+        id="search-control-input"
+        className="t-search-control-input"
         placeholder="Search"
         value={value}
         inputStyle={{
@@ -43,7 +44,8 @@ const SearchControl = ({ isOpen, toggle, value, onChange }) =>
         onChange={(event, newValue) => onChange(newValue)}
       />
       <IconButton
-        onTouchTap={() => onChange('')}
+        className="t-search-control-clear"
+        onClick={() => onChange('')}
         style={{ ...IconStyle, marginLeft: -24 }}
       >
         <NavigationClose color="#fff" />
