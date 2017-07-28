@@ -48,8 +48,7 @@
     "test:e2e": "nightwatch"
   },
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "collectCoverageFrom": ["src/components/**/*.js", "src/utils/**/*.js"]
   }
 }
