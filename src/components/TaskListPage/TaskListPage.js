@@ -12,14 +12,6 @@ class TaskListPage extends Component {
     super();
     this.selectedСache = [];
     this.undoDuration = 4000;
-    this.changeQuery = this.changeQuery.bind(this);
-    this.toggleItem = this.toggleItem.bind(this);
-    this.clearSelect = this.clearSelect.bind(this);
-    this.deleteTasks = this.deleteTasks.bind(this);
-    this.startDeleteTask = this.startDeleteTask.bind(this);
-    this.toggleModal = this.toggleModal.bind(this);
-    this.toggleSnack = this.toggleSnack.bind(this);
-    this.undoDelete = this.undoDelete.bind(this);
   }
   state = {
     selected: [],
@@ -28,20 +20,20 @@ class TaskListPage extends Component {
     deleteSnack: false,
     query: ''
   };
-  startDeleteTask() {
+  startDeleteTask = () => {
     this.toggleModal();
     this.toggleSnack();
     this.selectedСache = [...this.state.selected];
     this.clearSelect();
   }
-  undoDelete() {
+  undoDelete= () => {
     this.toggleSnack(false);
     this.setState({
       selected: [...this.selectedСache]
     });
     this.selectedСache = [];
   }
-  async deleteTasks() {
+  async deleteTasks= () => {
     const ids = this.selectedСache;
     await api.deleteTasks(ids);
     this.setState({
@@ -50,10 +42,10 @@ class TaskListPage extends Component {
     });
     this.selectedСache = [];
   }
-  changeQuery(query) {
+  changeQuery = (query) => {
     this.setState({ query });
   }
-  clearSelect() {
+  clearSelect= () => {
     this.setState({
       selected: []
     });
@@ -61,7 +53,7 @@ class TaskListPage extends Component {
   async componentWillMount() {
     api.getTasks().then(data => this.setState({ data }));
   }
-  toggleItem(id) {
+  toggleItem = (id) => {
     const { selected } = this.state;
     if (selected.includes(id)) {
       this.setState({
@@ -73,12 +65,12 @@ class TaskListPage extends Component {
       });
     }
   }
-  toggleModal() {
+  toggleModal = () => {
     this.setState({
       deleteDialog: !this.state.deleteDialog
     });
   }
-  toggleSnack(needDelete) {
+  toggleSnack = (needDelete) => {
     if (needDelete !== false && this.state.deleteSnack === true) {
       this.deleteTasks();
     }
