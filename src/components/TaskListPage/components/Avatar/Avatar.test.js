@@ -5,16 +5,12 @@ import IconButton from 'material-ui/IconButton';
 import Check from 'material-ui/svg-icons/navigation/check';
 import Avatar, { types } from './Avatar';
 import hex2rgb from 'hex2rgb';
-import { mount } from 'enzyme';
+import mount from '../../../../utils/mount/mount';
 
 describe('Avatar', () => {
   it('Payload Monitoring Report', () => {
     const { text, bg, color } = types['Payload Monitoring Report'];
-    const wrapper = mount(
-      <ThemeProvider>
-        <Avatar type={'Payload Monitoring Report'} />
-      </ThemeProvider>
-    );
+    const wrapper = mount(<Avatar type={'Payload Monitoring Report'} />);
     const Ring = wrapper.find('div').getNode();
     expect(Ring.style['background-color']).toBe(hex2rgb(bg).rgbString);
     expect(Ring.style['color']).toBe(hex2rgb(color).rgbString);
@@ -23,11 +19,7 @@ describe('Avatar', () => {
 
   it('Default', () => {
     const { text, bg, color } = types.Default;
-    const wrapper = mount(
-      <ThemeProvider>
-        <Avatar type={'unknow'} />
-      </ThemeProvider>
-    );
+    const wrapper = mount(<Avatar type={'unknow'} />);
     const Ring = wrapper.find('div').getNode();
     expect(Ring.style['background-color']).toBe(hex2rgb(bg).rgbString);
     expect(Ring.style['color']).toBe(hex2rgb(color).rgbString);
@@ -35,22 +27,12 @@ describe('Avatar', () => {
   });
 
   it('Select mode', () => {
-    const { text, bg, color } = types.Default;
-    const wrapper = mount(
-      <ThemeProvider>
-        <Avatar selectMode={true} />
-      </ThemeProvider>
-    );
+    const wrapper = mount(<Avatar selectMode={true} />);
     expect(wrapper.find(IconButton).length).toBe(1);
     expect(wrapper.find(Check).length).toBe(0);
   });
   it('Select mode selected', () => {
-    const { text, bg, color } = types.Default;
-    const wrapper = mount(
-      <ThemeProvider>
-        <Avatar selectMode={true} isSelected={true} />
-      </ThemeProvider>
-    );
+    const wrapper = mount(<Avatar selectMode={true} isSelected={true} />);
     expect(wrapper.find(IconButton).length).toBe(1);
     expect(wrapper.find(Check).length).toBe(1);
   });

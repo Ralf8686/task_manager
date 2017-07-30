@@ -1,16 +1,11 @@
 import React from 'react';
-import ThemeProvider from '../../../ThemeProvider/ThemeProvider';
 import TaskListBar, { AppBarWrapper } from './TaskListBar';
-import { MemoryRouter } from 'react-router-dom';
-import { mount, shallow } from 'enzyme';
+import mount from '../../../../utils/mount/mount';
+import { shallow } from 'enzyme';
 
 describe('TaskListBar', () => {
   it('Without selected', () => {
-    const bar = mount(
-      <ThemeProvider>
-        <TaskListBar />
-      </ThemeProvider>
-    );
+    const bar = mount(<TaskListBar />);
     expect(bar.find('.t-bar-title').text()).toBe('AUTOMATED TASKS');
     expect(bar.find(AppBarWrapper)).toHaveStyleRule(
       'background-color',
@@ -18,13 +13,7 @@ describe('TaskListBar', () => {
     );
   });
   it('One selected', () => {
-    const bar = mount(
-      <MemoryRouter>
-        <ThemeProvider>
-          <TaskListBar selected={[1]} />
-        </ThemeProvider>
-      </MemoryRouter>
-    );
+    const bar = mount(<TaskListBar selected={[1]} />);
     expect(bar.find('.t-bar-title').text()).toBe('1 SELECTED');
     expect(bar.find('.t-edit-button').length).toEqual(1);
     expect(bar.find('.t-edit-button').length).toEqual(1);

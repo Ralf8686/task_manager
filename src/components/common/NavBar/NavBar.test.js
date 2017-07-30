@@ -1,7 +1,7 @@
 import React from 'react';
-import ThemeProvider from '../../ThemeProvider/ThemeProvider';
 import NavBar, { NavBarWrapper, PageTitle } from './NabBar';
-import { shallow, mount } from 'enzyme';
+import mount from '../../../../utils/mount/mount';
+import { shallow } from 'enzyme';
 
 describe('Nav Bar', () => {
   it('Logo click', () => {
@@ -11,11 +11,7 @@ describe('Nav Bar', () => {
     expect(wrapper.state('open')).toBe(true);
   });
   it('Not selected mode', () => {
-    const wrapper = mount(
-      <ThemeProvider>
-        <NavBar />
-      </ThemeProvider>
-    );
+    const wrapper = mount(<NavBar />);
     expect(wrapper.find(PageTitle).prop('color')).toBe('#fff');
     expect(wrapper.find(NavBarWrapper)).toHaveStyleRule(
       'background-color',
@@ -23,11 +19,7 @@ describe('Nav Bar', () => {
     );
   });
   it('Selected mode', () => {
-    const wrapper = mount(
-      <ThemeProvider>
-        <NavBar isSelected={true} />
-      </ThemeProvider>
-    );
+    const wrapper = mount(<NavBar isSelected={true} />);
     expect(wrapper.find(PageTitle).prop('color')).toBe('#000');
     expect(wrapper.find(NavBarWrapper)).toHaveStyleRule(
       'background-color',
