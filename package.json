@@ -7,6 +7,7 @@
     "@angular/core": "^4.3.1",
     "@angular/http": "^4.2.6",
     "@angular/platform-browser": "^4.3.1",
+    "PubSub": "^3.2.6",
     "chromedriver": "^2.30.1",
     "date-fns": "^1.28.5",
     "enzyme": "^2.9.1",
@@ -48,7 +49,12 @@
     "test:e2e": "nightwatch"
   },
   "jest": {
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "collectCoverageFrom": ["src/components/**/*.js", "src/utils/**/*.js"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/components/**/*.js",
+      "src/utils/**/*.js"
+    ]
   }
 }

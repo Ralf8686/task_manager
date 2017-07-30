@@ -1,39 +1,75 @@
 import React, { Component } from 'react';
+import FlatButton from 'material-ui/FlatButton';
 import NavBar from '../common/NavBar/NabBar';
 import TaskList from './components/TaskList/TaskList';
 import Container from '../common/Container/Container';
 import TaskListBar from './components/TaskListBar/TaskListBar';
-import DeleteDialog from './components/DeleteDialog/DeleteDialog';
-import DeleteSnackbar from './components/DeleteSnackbar/DeleteSnackbar';
+
+import {
+  showDialog,
+  hideDialog
+} from '../common/ModalContainer/ModalContainer';
+import {
+  showSnackbar,
+  hideSnackbar
+} from '../common/SnackbarContainer/SnackbarContainer';
 import api from '../../api/api';
 
 class TaskListPage extends Component {
   constructor() {
     super();
     this.selectedСache = [];
-    this.undoDuration = 4000;
   }
+
   state = {
     selected: [],
     data: [],
-    deleteDialog: false,
-    deleteSnack: false,
     query: ''
   };
-  startDeleteTask = () => {
-    this.toggleModal();
-    this.toggleSnack();
+
+  undoDelete = () => {
+    const selected = [...this.selectedСache];
+    this.selectedСache = [];
+    this.setState({
+      selected
+    });
+  };
+  deleteTasks = async () => {
+    const dialog = {
+      title: 'Delete selected tasks?'
+    };
+    dialog.actions = [
+      <FlatButton
+        label="CANCEL"
+        primary={true}
+        onTouchTap={() => hideDialog(dialog)}
+      />,
+      <FlatButton
+        label="DELETE"
+        primary={true}
+        onTouchTap={() => hideDialog(dialog, true)}
+      />
+    ];
+    const needDelete = await showDialog(dialog);
+    if (!needDelete) return;
+
     this.selectedСache = [...this.state.selected];
     this.clearSelect();
-  }
-  undoDelete= () => {
-    this.toggleSnack(false);
-    this.setState({
-      selected: [...this.selectedСache]
-    });
-    this.selectedСache = [];
-  }
-  async deleteTasks= () => {
+
+    const snackbar = {
+      message: 'Task deleted',
+      action: 'undo',
+      autoHideDuration: 4000
+    };
+    snackbar.onActionTouchTap = () => {
+      hideSnackbar(snackbar, true);
+    };
+
+    const needUndo = await showSnackbar(snackbar);
+    if (needUndo) {
+      this.undoDelete();
+      return;
+    }
     const ids = this.selectedСache;
     await api.deleteTasks(ids);
     this.setState({
@@ -41,19 +77,19 @@ class TaskListPage extends Component {
       selected: []
     });
     this.selectedСache = [];
-  }
-  changeQuery = (query) => {
+  };
+  changeQuery = query => {
     this.setState({ query });
-  }
-  clearSelect= () => {
+  };
+  clearSelect = () => {
     this.setState({
       selected: []
     });
-  }
+  };
   async componentWillMount() {
     api.getTasks().then(data => this.setState({ data }));
   }
-  toggleItem = (id) => {
+  toggleItem = id => {
     const { selected } = this.state;
     if (selected.includes(id)) {
       this.setState({
@@ -64,20 +100,7 @@ class TaskListPage extends Component {
         selected: [...selected, id]
       });
     }
-  }
-  toggleModal = () => {
-    this.setState({
-      deleteDialog: !this.state.deleteDialog
-    });
-  }
-  toggleSnack = (needDelete) => {
-    if (needDelete !== false && this.state.deleteSnack === true) {
-      this.deleteTasks();
-    }
-    this.setState({
-      deleteSnack: !this.state.deleteSnack
-    });
-  }
+  };
   render() {
     const data = this.state.data.filter(
       ({ id }) => !this.selectedСache.includes(id)
@@ -90,7 +113,7 @@ class TaskListPage extends Component {
           query={this.state.query}
           clearSelect={this.clearSelect}
           selected={this.state.selected}
-          deleteTasks={this.toggleModal}
+          deleteTasks={this.deleteTasks}
         />
         <Container style={{ paddingTop: 50 }}>
           <TaskList
@@ -100,17 +123,6 @@ class TaskListPage extends Component {
             query={this.state.query}
           />
         </Container>
-        <DeleteDialog
-          open={this.state.deleteDialog}
-          onHandleClose={this.toggleModal}
-          deleteTasks={this.startDeleteTask}
-        />
-        <DeleteSnackbar
-          open={this.state.deleteSnack}
-          undoDuration={this.undoDuration}
-          handleActionTouchTap={this.undoDelete}
-          handleRequestClose={this.toggleSnack}
-        />
       </div>
     );
   }
