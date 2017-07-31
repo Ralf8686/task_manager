@@ -101,19 +101,23 @@ class TaskListPage extends Component {
       });
     }
   };
+  editTask() {
+    this.props.history.push(`edit/${this.selected[0]}`);
+  }
   render() {
     const data = this.state.data.filter(
       ({ id }) => !this.selectedСache.includes(id)
     );
     return (
       <div>
-        <NavBar isSelected={this.state.selected.length !== 0} />
+        <NavBar selectMode={this.state.selected.length !== 0} />
         <TaskListBar
           changeQuery={this.changeQuery}
           query={this.state.query}
           clearSelect={this.clearSelect}
-          selected={this.state.selected}
+          selectedCount={this.state.selected.length}
           deleteTasks={this.deleteTasks}
+          editTask={this.editTask}
         />
         <Container style={{ paddingTop: 50 }}>
           <TaskList

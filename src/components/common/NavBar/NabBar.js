@@ -8,8 +8,8 @@ import MenuItem from 'material-ui/MenuItem';
 
 export const NavBarWrapper = styled.div`
   height: ${({ theme }) => theme.sizes.navBar};
-  background-color: ${({ theme, selected }) =>
-    selected ? theme.colors.selectedRow : theme.colors.navBar};
+  background-color: ${({ theme, selectMode }) =>
+    selectMode ? theme.colors.selectedRow : theme.colors.navBar};
   display: flex;
   justify-content: space-between;
 `;
@@ -35,9 +35,9 @@ export default class NavBar extends Component {
   }
   handleToggle = () => this.setState({ open: !this.state.open });
   render() {
-    const color = this.props.isSelected ? '#000' : '#fff';
+    const color = this.props.selectMode ? '#000' : '#fff';
     return (
-      <NavBarWrapper selected={this.props.isSelected}>
+      <NavBarWrapper selectMode={this.props.selectMode}>
         <NavBarLeft>
           <Logo className="t-logo" onClick={this.handleToggle} />
           <Drawer open={this.state.open}>

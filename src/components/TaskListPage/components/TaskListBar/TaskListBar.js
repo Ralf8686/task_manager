@@ -13,8 +13,8 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import SearchControl from '../../../common/SearchControl/SearchControl';
 
 export const AppBarWrapper = styled.div`
-  background-color: ${({ theme, selected }) =>
-    selected ? theme.colors.selectedRow : theme.colors.appBar};
+  background-color: ${({ theme, selectedMode }) =>
+    selectedMode ? theme.colors.selectedRow : theme.colors.appBar};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.32);
 `;
 
@@ -42,13 +42,14 @@ const AppBarControls = styled.div``;
 export default ({
   changeQuery,
   query,
-  selected = [],
+  selectedCount = 0,
   clearSelect,
-  deleteTasks
+  deleteTasks,
+  editTask
 }) => {
-  const haveSelect = selected.length !== 0;
+  const haveSelect = selectedCount !== 0;
   return (
-    <AppBarWrapper selected={haveSelect}>
+    <AppBarWrapper selectedMode={haveSelect}>
       {haveSelect
         ? <AppBarContainer>
             <IconButton
@@ -59,15 +60,13 @@ export default ({
               <Close />
             </IconButton>
             <BaseText type="appTitle" className="t-bar-title">
-              {selected.length} SELECTED
+              {selectedCount} SELECTED
             </BaseText>
             <AppBarControls>
-              {selected.length === 1
-                ? <Link to={`/edit/${selected[0]}`}>
-                    <IconButton className="t-edit-button">
-                      <Create />
-                    </IconButton>
-                  </Link>
+              {selectedCount === 1
+                ? <IconButton className="t-edit-button" onClick={editTask}>
+                    <Create />
+                  </IconButton>
                 : null}
               <IconButton className="t-bar-delete-task" onClick={deleteTasks}>
                 <Delete />
