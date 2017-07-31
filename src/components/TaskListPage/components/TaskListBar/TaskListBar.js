@@ -64,7 +64,7 @@ export default ({
             </BaseText>
             <AppBarControls>
               {selectedCount === 1
-                ? <IconButton className="t-edit-button" onClick={editTask}>
+                ? <IconButton className="t-bar-edit-button" onClick={editTask}>
                     <Create />
                   </IconButton>
                 : null}
