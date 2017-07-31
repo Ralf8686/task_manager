@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="2">
+
+  <testsuite name="TaskList.test"
+    errors="1" failures="0" hostname="" id="" package="TaskList" skipped="1"
+    tests="2" time="0.01800" timestamp="Sun, 30 Jul 2017 18:30:55 GMT">
+  
+    <testcase name="Show api" classname="TaskList.test" time="0.01800" assertions="0">
+    </testcase>
+  
+
+  
+    <system-err>
+        Error while running [Task List / Test / Show api]:
+
+  TypeError: taskList.getNumberOfItems(...).equal is not a function
+    at Object.Show api (/Users/s.levenson/self/motion_metrics/e2e/tests/TaskList/test.js:9:33)
+    at Module.call (/Users/s.levenson/self/motion_metrics/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/s.levenson/self/motion_metrics/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/s.levenson/self/motion_metrics/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/s.levenson/self/motion_metrics/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/s.levenson/self/motion_metrics/node_modules/q/q.js:796:13)
+    at /Users/s.levenson/self/motion_metrics/node_modules/q/q.js:556:49
+    at runSingle (/Users/s.levenson/self/motion_metrics/node_modules/q/q.js:137:13)
+    at flush (/Users/s.levenson/self/motion_metrics/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:95:7)
+    </system-err>
+  
+
+  
+    
+    <testcase
+      name="Filter items" classname="TaskList.test">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

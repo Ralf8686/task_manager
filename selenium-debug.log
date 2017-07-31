@@ -1,50 +1,88 @@
-01:31:19.128 INFO - Selenium build info: version: '3.4.0', revision: 'unknown'
-01:31:19.129 INFO - Launching a standalone Selenium Server
-2017-07-21 01:31:19.147:INFO::main: Logging initialized @243ms to org.seleniumhq.jetty9.util.log.StdErrLog
-01:31:19.204 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
+01:23:27.546 INFO - Selenium build info: version: '3.4.0', revision: 'unknown'
+01:23:27.547 INFO - Launching a standalone Selenium Server
+2017-08-01 01:23:27.565:INFO::main: Logging initialized @254ms to org.seleniumhq.jetty9.util.log.StdErrLog
+01:23:27.622 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
  registration capabilities Capabilities [{ensureCleanSession=true, browserName=internet explorer, version=, platform=WINDOWS}] does not match the current platform MAC
-01:31:19.204 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
+01:23:27.622 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
  registration capabilities Capabilities [{browserName=MicrosoftEdge, version=, platform=WINDOWS}] does not match the current platform MAC
-01:31:19.204 INFO - Driver class not found: com.opera.core.systems.OperaDriver
-01:31:19.204 INFO - Driver provider com.opera.core.systems.OperaDriver registration is skipped:
+01:23:27.622 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+01:23:27.622 INFO - Driver provider com.opera.core.systems.OperaDriver registration is skipped:
 Unable to create new instances on this machine.
-01:31:19.204 INFO - Driver class not found: com.opera.core.systems.OperaDriver
-01:31:19.205 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
-2017-07-21 01:31:19.244:INFO:osjs.Server:main: jetty-9.4.3.v20170317
-2017-07-21 01:31:19.274:INFO:osjsh.ContextHandler:main: Started o.s.j.s.ServletContextHandler@59f99ea{/,null,AVAILABLE}
-2017-07-21 01:31:19.304:INFO:osjs.AbstractConnector:main: Started ServerConnector@553f17c{HTTP/1.1,[http/1.1]}{0.0.0.0:4444}
-2017-07-21 01:31:19.305:INFO:osjs.Server:main: Started @401ms
-01:31:19.305 INFO - Selenium Server is up and running
-01:31:19.509 INFO - SessionCleaner initialized with insideBrowserTimeout 0 and clientGoneTimeout 1800000 polling every 180000
-01:31:19.534 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, name=Test, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
-01:31:19.551 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, name=Test, browserName=chrome, javascriptEnabled=true, platform=ANY}]
-Starting ChromeDriver 2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262) on port 42269
+01:23:27.622 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+01:23:27.623 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+2017-08-01 01:23:27.663:INFO:osjs.Server:main: jetty-9.4.3.v20170317
+2017-08-01 01:23:27.693:INFO:osjsh.ContextHandler:main: Started o.s.j.s.ServletContextHandler@59f99ea{/,null,AVAILABLE}
+2017-08-01 01:23:27.725:INFO:osjs.AbstractConnector:main: Started ServerConnector@553f17c{HTTP/1.1,[http/1.1]}{0.0.0.0:4444}
+2017-08-01 01:23:27.726:INFO:osjs.Server:main: Started @415ms
+01:23:27.726 INFO - Selenium Server is up and running
+01:23:27.936 INFO - SessionCleaner initialized with insideBrowserTimeout 0 and clientGoneTimeout 1800000 polling every 180000
+01:23:27.962 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, fullscreen=true, name=Task List / Test, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
+01:23:27.981 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, fullscreen=true, name=Task List / Test, browserName=chrome, javascriptEnabled=true, platform=ANY}]
+Starting ChromeDriver 2.31.488774 (7e15618d1bf16df8bf0ecf2914ed1964a387ba0b) on port 12358
 Only local connections are allowed.
-01:31:20.892 INFO - Detected dialect: OSS
-01:31:20.909 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, name=Test, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
-01:31:20.922 INFO - Executing: [get: http://localhost:3000])
-01:31:21.633 INFO - Done: [get: http://localhost:3000]
-01:31:21.640 INFO - Executing: [find elements: By.cssSelector: body])
-01:31:21.676 INFO - Done: [find elements: By.cssSelector: body]
-01:31:21.683 INFO - Executing: [find elements: By.cssSelector: .t-task-list])
-01:31:21.709 INFO - Done: [find elements: By.cssSelector: .t-task-list]
-01:31:21.712 INFO - Executing: [find elements: By.cssSelector: #Search])
-01:31:21.732 INFO - Done: [find elements: By.cssSelector: #Search]
-01:31:21.735 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
-01:31:21.753 INFO - Done: [find elements: By.cssSelector: .t-task-item]
-01:31:22.264 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
-01:31:22.273 INFO - Done: [find elements: By.cssSelector: .t-task-item]
-01:31:22.276 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
-01:31:22.288 INFO - Done: [find elements: By.cssSelector: .t-task-item]
-01:31:22.298 INFO - Executing: [find element: By.cssSelector: #SearchToggleButton])
-01:31:22.319 INFO - Done: [find element: By.cssSelector: #SearchToggleButton]
-01:31:22.323 INFO - Executing: [click: 6 [[ChromeDriver: chrome on MAC (d1c1341ec98e8e13ab74f23e638e6420)] -> css selector: #SearchToggleButton]])
-01:31:22.393 INFO - Done: [click: 6 [[ChromeDriver: chrome on MAC (d1c1341ec98e8e13ab74f23e638e6420)] -> css selector: #SearchToggleButton]]
-01:31:22.397 INFO - Executing: [find element: By.cssSelector: #Search])
-01:31:22.417 INFO - Done: [find element: By.cssSelector: #Search]
-01:31:22.423 INFO - Executing: [send keys: 2 [[ChromeDriver: chrome on MAC (d1c1341ec98e8e13ab74f23e638e6420)] -> css selector: #Search], [s, t, u, b]])
-01:31:22.570 INFO - Done: [send keys: 2 [[ChromeDriver: chrome on MAC (d1c1341ec98e8e13ab74f23e638e6420)] -> css selector: #Search], [s, t, u, b]]
-01:31:22.574 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
-01:31:22.583 INFO - Done: [find elements: By.cssSelector: .t-task-item]
-01:31:22.587 INFO - Executing: [delete session: 8cde4de0-3859-4b3c-b770-936918e21db3])
-01:31:22.713 INFO - Done: [delete session: 8cde4de0-3859-4b3c-b770-936918e21db3]
+01:23:29.627 INFO - Detected dialect: OSS
+01:23:29.644 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, fullscreen=true, name=Task List / Test, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
+01:23:29.659 INFO - Executing: [get: http://localhost:3001/])
+01:23:30.393 INFO - Done: [get: http://localhost:3001/]
+01:23:30.401 INFO - Executing: [find elements: By.cssSelector: .t-task-list])
+01:23:30.437 INFO - Done: [find elements: By.cssSelector: .t-task-list]
+01:23:30.444 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
+01:23:30.467 INFO - Done: [find elements: By.cssSelector: .t-task-item]
+01:23:30.979 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
+01:23:30.990 INFO - Done: [find elements: By.cssSelector: .t-task-item]
+01:23:30.996 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
+01:23:31.005 INFO - Done: [find elements: By.cssSelector: .t-task-item]
+01:23:31.015 INFO - Executing: [find elements: By.cssSelector: #search-control-input])
+01:23:31.034 INFO - Done: [find elements: By.cssSelector: #search-control-input]
+01:23:31.039 INFO - Executing: [find element: By.cssSelector: .t-search-control-toggle])
+01:23:31.058 INFO - Done: [find element: By.cssSelector: .t-search-control-toggle]
+01:23:31.062 INFO - Executing: [click: 5 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-search-control-toggle]])
+01:23:31.130 INFO - Done: [click: 5 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-search-control-toggle]]
+01:23:31.133 INFO - Executing: [find element: By.cssSelector: #search-control-input])
+01:23:31.154 INFO - Done: [find element: By.cssSelector: #search-control-input]
+01:23:31.158 INFO - Executing: [send keys: 4 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: #search-control-input], [s, t, u, b]])
+01:23:31.294 INFO - Done: [send keys: 4 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: #search-control-input], [s, t, u, b]]
+01:23:31.297 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
+01:23:31.305 INFO - Done: [find elements: By.cssSelector: .t-task-item]
+01:23:31.309 INFO - Executing: [find element: By.cssSelector: .t-search-control-clear])
+01:23:31.329 INFO - Done: [find element: By.cssSelector: .t-search-control-clear]
+01:23:31.332 INFO - Executing: [click: 6 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-search-control-clear]])
+01:23:31.407 INFO - Done: [click: 6 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-search-control-clear]]
+01:23:31.411 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
+01:23:31.420 INFO - Done: [find elements: By.cssSelector: .t-task-item]
+01:23:31.430 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
+01:23:31.439 INFO - Done: [find elements: By.cssSelector: .t-task-item]
+01:23:31.444 INFO - Executing: [find element: By.cssSelector: .t-task-item:nth-child(1)])
+01:23:31.463 INFO - Done: [find element: By.cssSelector: .t-task-item:nth-child(1)]
+01:23:31.466 INFO - Executing: [click: 7 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-task-item]])
+01:23:31.547 INFO - Done: [click: 7 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-task-item]]
+01:23:31.551 INFO - Executing: [find elements: By.cssSelector: .t-bar-title])
+01:23:31.570 INFO - Done: [find elements: By.cssSelector: .t-bar-title]
+01:23:31.573 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-bar-title]])
+01:23:31.595 INFO - Done: [get text: 8 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-bar-title]]
+01:23:31.600 INFO - Executing: [find elements: By.cssSelector: .t-bar-delete-task])
+01:23:31.620 INFO - Done: [find elements: By.cssSelector: .t-bar-delete-task]
+01:23:31.625 INFO - Executing: [find elements: By.cssSelector: .t-bar-edit-button])
+01:23:31.644 INFO - Done: [find elements: By.cssSelector: .t-bar-edit-button]
+01:23:31.648 INFO - Executing: [find element: By.cssSelector: .t-bar-delete-task])
+01:23:31.668 INFO - Done: [find element: By.cssSelector: .t-bar-delete-task]
+01:23:31.671 INFO - Executing: [click: 9 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-bar-delete-task]])
+01:23:31.730 INFO - Done: [click: 9 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-bar-delete-task]]
+01:23:31.734 INFO - Executing: [find elements: By.cssSelector: .t-modal-delete-task])
+01:23:31.763 INFO - Done: [find elements: By.cssSelector: .t-modal-delete-task]
+01:23:31.767 INFO - Executing: [find element: By.cssSelector: .t-modal-delete-task])
+01:23:31.787 INFO - Done: [find element: By.cssSelector: .t-modal-delete-task]
+01:23:31.793 INFO - Executing: [click: 11 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-modal-delete-task]])
+01:23:31.862 INFO - Done: [click: 11 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-modal-delete-task]]
+01:23:31.866 INFO - Executing: [find elements: By.cssSelector: .t-snack-delete-task])
+01:23:31.906 INFO - Done: [find elements: By.cssSelector: .t-snack-delete-task]
+01:23:31.910 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
+01:23:31.923 INFO - Done: [find elements: By.cssSelector: .t-task-item]
+01:23:31.928 INFO - Executing: [find element: By.cssSelector: .t-snack-delete-task button])
+01:23:31.948 INFO - Done: [find element: By.cssSelector: .t-snack-delete-task button]
+01:23:31.951 INFO - Executing: [click: 13 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-snack-delete-task button]])
+01:23:32.002 INFO - Done: [click: 13 [[ChromeDriver: chrome on MAC (bbfcf09676a7da62dc845dc9df89cb1f)] -> css selector: .t-snack-delete-task button]]
+01:23:32.006 INFO - Executing: [find elements: By.cssSelector: .t-task-item])
+01:23:32.032 INFO - Done: [find elements: By.cssSelector: .t-task-item]
+01:23:32.039 INFO - Executing: [delete session: 89ab9c4d-96a8-40a7-b673-130cf334a1a9])
+01:23:32.167 INFO - Done: [delete session: 89ab9c4d-96a8-40a7-b673-130cf334a1a9]

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="TaskList.test"
+    errors="0" failures="0" hostname="" id="" package="TaskList" skipped="0"
+    tests="3" time="4.385" timestamp="Mon, 31 Jul 2017 22:23:27 GMT">
+  
+    <testcase name="Show api" classname="TaskList.test" time="3.225" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Filter items" classname="TaskList.test" time="0.4130" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Select items" classname="TaskList.test" time="0.7470" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

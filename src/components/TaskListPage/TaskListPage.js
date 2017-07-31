@@ -47,6 +47,7 @@ class TaskListPage extends Component {
       <FlatButton
         label="DELETE"
         primary={true}
+        className="t-modal-delete-task"
         onTouchTap={() => hideDialog(dialog, true)}
       />
     ];
@@ -59,6 +60,7 @@ class TaskListPage extends Component {
     const snackbar = {
       message: 'Task deleted',
       action: 'undo',
+      className: 't-snack-delete-task',
       autoHideDuration: 4000
     };
     snackbar.onActionTouchTap = () => {
