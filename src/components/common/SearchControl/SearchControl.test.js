@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import mount from '../../../../utils/mount/mount';
+import mount from '../../../utils/mount/mount';
 import SearchControl, { SearchField } from './SearchControl';
 
 describe('SearchControl', () => {

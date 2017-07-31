@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar, { NavBarWrapper, PageTitle } from './NabBar';
-import mount from '../../../../utils/mount/mount';
+import mount from '../../../utils/mount/mount';
 import { shallow } from 'enzyme';
 
 describe('Nav Bar', () => {
@@ -19,7 +19,7 @@ describe('Nav Bar', () => {
     );
   });
   it('Selected mode', () => {
-    const wrapper = mount(<NavBar isSelected={true} />);
+    const wrapper = mount(<NavBar selectMode={true} />);
     expect(wrapper.find(PageTitle).prop('color')).toBe('#000');
     expect(wrapper.find(NavBarWrapper)).toHaveStyleRule(
       'background-color',
