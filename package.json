@@ -30,6 +30,7 @@
     "@storybook/react": "^3.1.8",
     "enzyme-to-json": "^1.5.1",
     "jest-styled-components": "^4.2.1",
+    "nightwatch-commands": "^3.0.0",
     "react-scripts": "1.0.10",
     "react-test-renderer": "^15.6.1",
     "watchman.js": "^0.1.2"
