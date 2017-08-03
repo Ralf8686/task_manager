@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ModalContainer from './components/common/ModalContainer/ModalContainer';
 import SnackbarContainer from './components/common/SnackbarContainer/SnackbarContainer';
 import TaskListPage from './components/TaskListPage/TaskListPage';
-import TaskEdit from './components/TaskEdit/TaskEdit';
+import TaskPage from './components/TaskPage/TaskPage';
 
 // eslint-disable-next-line
 injectGlobal`
@@ -22,7 +22,7 @@ class App extends Component {
           <BrowserRouter>
             <Switch>
               <Route path="/" exact component={TaskListPage} />
-              <Route path="/edit/:id" component={TaskEdit} />
+              <Route path="/task/:id" component={TaskPage} />
             </Switch>
           </BrowserRouter>
           <ModalContainer />

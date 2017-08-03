@@ -1,5 +1,6 @@
 import React from 'react';
-import TaskListBar, { AppBarWrapper } from './TaskListBar';
+import { AppBarWrapper } from '../../../common/AppBar/AppBar';
+import TaskListBar from './TaskListBar';
 import mount from '../../../../utils/mount/mount';
 import { shallow } from 'enzyme';
 

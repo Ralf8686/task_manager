@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import BaseText from '../../../common/BaseText/BaseText';
-import AppBarContainer from '../../../common/AppBarContainer/AppBarContainer';
+import { AppBarContainer, AppBarWrapper } from '../../../common/AppBar/AppBar';
 import IconButton from 'material-ui/IconButton';
 import Close from 'material-ui/svg-icons/navigation/close';
 import Create from 'material-ui/svg-icons/content/create';
@@ -12,13 +12,7 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import SearchControl from '../../../common/SearchControl/SearchControl';
 
-export const AppBarWrapper = styled.div`
-  background-color: ${({ theme, selectedMode }) =>
-    selectedMode ? theme.colors.selectedRow : theme.colors.appBar};
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.32);
-`;
-
-const AddButton = styled(FloatingActionButton)`
+const AddButton = styled(Link)`
   height: 56px;
   width: 56px;
   position: absolute;
@@ -74,8 +68,10 @@ export default ({
             </AppBarControls>
           </AppBarContainer>
         : <AppBarContainer>
-            <AddButton>
-              <ContentAdd />
+            <AddButton to="/task/new">
+              <FloatingActionButton>
+                <ContentAdd />
+              </FloatingActionButton>
             </AddButton>
             <BaseText type="appTitle" color="white" className="t-bar-title">
               AUTOMATED TASKS

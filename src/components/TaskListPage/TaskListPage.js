@@ -103,9 +103,9 @@ class TaskListPage extends Component {
       });
     }
   };
-  editTask() {
-    this.props.history.push(`edit/${this.selected[0]}`);
-  }
+  editTask = () => {
+    this.props.history.push(`task/${this.state.selected[0]}`);
+  };
   render() {
     const data = this.state.data.filter(
       ({ id }) => !this.selectedСache.includes(id)
