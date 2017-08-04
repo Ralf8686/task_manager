@@ -1,15 +1,17 @@
 module.exports = {
-  url: 'http://localhost:3002/',
+  url: 'http://localhost:3001/',
   elements: {
     taskList: '.t-task-list',
     taskItem: '.t-task-item',
+    secondTaskItem: '.t-task-item:nth-child(2)',
     barTitle: '.t-bar-title',
     barEdit: '.t-bar-edit-button',
+    barClearSelected: '.t-bar-clear-selected',
+    barDeleteTask: '.t-bar-delete-task',
     searchControlInput: '#search-control-input',
     searchControlToggle: '.t-search-control-toggle',
     searchControlClear: '.t-search-control-clear',
-    modalDeleteTask: '.t-modal-delete-task',
-    deleteTask: '.t-bar-delete-task'
+    modalDeleteTask: '.t-modal-delete-task'
   },
   sections: {
     snack: {
@@ -18,17 +20,5 @@ module.exports = {
         undoDelete: 'button'
       }
     }
-  },
-  commands: [
-    {
-      getNumberOfItems: function(callback) {
-        var self = this;
-        return this.api.elements('css selector', '.t-task-item', function(
-          result
-        ) {
-          callback.call(self, result.value.length);
-        });
-      }
-    }
-  ]
+  }
 };
