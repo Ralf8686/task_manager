@@ -4,8 +4,12 @@ import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import AutoComplete from 'material-ui/AutoComplete';
+import TimePicker from 'material-ui/TimePicker';
 import BaseText from '../../../common/BaseText/BaseText';
+import api from '../../../../api/api';
 import { isLength } from 'validator';
+import { Flex, Box } from 'grid-styled';
 
 const Body = styled.div`padding: 10px 20px;`;
 const Form = styled.form`padding-top: 50px;`;
@@ -33,6 +37,7 @@ const fieldsRule = [
 
 export default class GeneralSettings extends Component {
   state = {
+    dataSource: [],
     form: {
       enabled: {
         value: false,
@@ -84,6 +89,13 @@ export default class GeneralSettings extends Component {
       () => this.validate()
     );
   };
+  fetchTimeZone = async value => {
+    const zones = await api.getTimeZoneByName(value);
+    console.log(zones);
+    this.setState({
+      dataSource: zones
+    });
+  };
   render() {
     const { changeField, changeSelectField } = this;
     const { form } = this.state;
@@ -91,40 +103,66 @@ export default class GeneralSettings extends Component {
       <Body>
         <BaseText size="heading">General Settings</BaseText>
         <Form>
-          <Toggle
-            label={`Task ${form.enabled.value ? 'enabled' : 'disabled'}`}
-            toggled={form.enabled.value}
-            onToggle={changeField('enabled')}
-          />
-          <TextField
-            style={{ width: '100%' }}
-            floatingLabelText="Task Title"
-            value={form.title.value}
-            onChange={changeField('title')}
-            errorText={
-              form.title.errors.length !== 0 ? form.title.errors[0] : ''
-            }
-          />
-          <SelectField
-            style={{ width: '100%' }}
-            floatingLabelText="Task type"
-            value={form.type.value}
-            onChange={changeSelectField('type')}
-            errorText={form.type.errors.length !== 0 ? form.type.errors[0] : ''}
-          >
-            <MenuItem
-              value="Payload Monitoring Report"
-              primaryText="Payload Monitoring Report"
-            />
-            <MenuItem
-              value="Tooth Detection Report"
-              primaryText="Tooth Detection Report"
-            />
-            <MenuItem
-              value="Fragmentation Report"
-              primaryText="Fragmentation Report"
-            />
-          </SelectField>
+          <Flex wrap align="flex-end">
+            <Box px={2} py={1} width={1}>
+              <Toggle
+                label={`Task ${form.enabled.value ? 'enabled' : 'disabled'}`}
+                toggled={form.enabled.value}
+                onToggle={changeField('enabled')}
+              />
+            </Box>
+            <Box px={2} py={1} width={1}>
+              <TextField
+                fullWidth={true}
+                floatingLabelText="Task Title"
+                value={form.title.value}
+                onChange={changeField('title')}
+                errorText={
+                  form.title.errors.length !== 0 ? form.title.errors[0] : ''
+                }
+              />
+            </Box>
+            <Box px={2} py={1} width={1}>
+              <SelectField
+                fullWidth={true}
+                floatingLabelText="Task type"
+                value={form.type.value}
+                onChange={changeSelectField('type')}
+                errorText={
+                  form.type.errors.length !== 0 ? form.type.errors[0] : ''
+                }
+              >
+                <MenuItem
+                  value="Payload Monitoring Report"
+                  primaryText="Payload Monitoring Report"
+                />
+                <MenuItem
+                  value="Tooth Detection Report"
+                  primaryText="Tooth Detection Report"
+                />
+                <MenuItem
+                  value="Fragmentation Report"
+                  primaryText="Fragmentation Report"
+                />
+              </SelectField>
+            </Box>
+            <Box px={2} py={1} width={1 / 2}>
+              <AutoComplete
+                dataSource={this.state.dataSource}
+                filter={AutoComplete.noFilter}
+                onUpdateInput={this.fetchTimeZone}
+                floatingLabelText="Time Zone"
+                fullWidth={true}
+              />
+            </Box>
+            <Box px={2} py={1} width={1 / 2}>
+              <TimePicker
+                hintText="Start Time"
+                fullWidth={true}
+                format="24hr"
+              />
+            </Box>
+          </Flex>
         </Form>
       </Body>
     );
