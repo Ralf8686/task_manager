@@ -1,6 +1,4 @@
-import { Observable } from 'rxjs/Observable';
-import { Http, URLSearchParams } from '@angular/http';
-
+import { get } from 'axios';
 import { intersection, uniq } from 'lodash';
 import * as moment from 'moment';
 import { environment } from '../environments/environment';
@@ -9,10 +7,6 @@ import { mockData } from './mock-data';
 let fakeStartId = 1000;
 
 class ApiService {
-  constructor() {
-    this.http = Http;
-  }
-
   async getById(id) {
     const task = mockData.filter(x => x.id === id)[0];
     return task;
@@ -32,22 +26,20 @@ class ApiService {
   }
 
   getTimezoneByLatLng({ lat, lng }) {
-    const locationParams = new URLSearchParams();
-    locationParams.set('location', `${lat},${lng}`);
-    locationParams.set('key', environment.gTzKey);
-    locationParams.set('timestamp', Math.floor(Date.now() / 1000).toString());
-    return this.http
-      .get('https://maps.googleapis.com/maps/api/timezone/json', {
-        search: locationParams
-      })
-      .map(r => r.json())
-      .map(tz => {
-        const c = moment.duration(Math.abs(tz.rawOffset), 'seconds');
-        const formatted = moment('2000-01-01 00:00:00').add(c).format('HH:mm');
+    const params = {
+      key: environment.gTzKey,
+      location: `${lat},${lng}`,
+      timestamp: Math.floor(Date.now() / 1000).toString()
+    };
+    return get('https://maps.googleapis.com/maps/api/timezone/json', {
+      params
+    }).then(({ data }) => {
+      const c = moment.duration(Math.abs(data.rawOffset), 'seconds');
+      const formatted = moment('2000-01-01 00:00:00').add(c).format('HH:mm');
 
-        const sign = tz.rawOffset > 0 ? '+' : '-';
-        return `${tz.timeZoneId} UTC${sign}${formatted}`;
-      });
+      const sign = data.rawOffset > 0 ? '+' : '-';
+      return `${data.timeZoneId} UTC${sign}${formatted}`;
+    });
   }
 
   getLocationsByAddress(address) {
@@ -58,37 +50,33 @@ class ApiService {
       'administrative_area_level_2'
     ];
 
-    const params = new URLSearchParams();
     if (!address) {
-      return Observable.fromPromise(Promise.resolve([]));
+      return Promise.resolve([]);
     }
-    params.set('address', address);
-    params.set('key', environment.gmapsApiKey);
-    return this.http
-      .get('https://maps.googleapis.com/maps/api/geocode/json', {
-        search: params
-      })
-      .map(r => r.json())
-      .map(data => {
-        const regions = data.results.filter(
-          e => intersection(e.types, acceptableTypes).length
-        );
-        return regions.map(r => r.geometry.location);
-      });
+    const params = {
+      address,
+      key: environment.gmapsApiKey
+    };
+
+    return get('https://maps.googleapis.com/maps/api/geocode/json', {
+      params
+    }).then(({ data }) => {
+      const regions = data.results.filter(
+        e => intersection(e.types, acceptableTypes).length
+      );
+      return regions.map(r => r.geometry.location);
+    });
   }
 
   getTimeZoneByName(name) {
     const locations = this.getLocationsByAddress(name);
     return locations
-      .map(list =>
-        Observable.fromPromise(
-          Promise.all(
-            list.map(entry => this.getTimezoneByLatLng(entry).toPromise())
-          )
-        )
+      .then(list =>
+        Promise.all(list.map(entry => this.getTimezoneByLatLng(entry)))
       )
-      .mergeAll()
-      .map(list => uniq(list));
+      .then(data => {
+        return uniq(data);
+      });
   }
 
   async getRecipients() {

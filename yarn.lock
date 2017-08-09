@@ -2,30 +2,6 @@
 # yarn lockfile v1
 
 
-"@angular/common@^4.3.1":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.3.3.tgz#1fafbea33af4eba4cddd8677ef57a0f76a50488c"
-  dependencies:
-    tslib "^1.7.1"
-
-"@angular/core@^4.3.1":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.3.3.tgz#8e6a76914661db407fa2d88dd2441c4c016ff625"
-  dependencies:
-    tslib "^1.7.1"
-
-"@angular/http@^4.2.6":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@angular/http/-/http-4.3.3.tgz#cbe3639010362b681076f0b606673a0e62fd940d"
-  dependencies:
-    tslib "^1.7.1"
-
-"@angular/platform-browser@^4.3.1":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-4.3.3.tgz#623b659794f079096d4f7685b4bebcb49e3b9a71"
-  dependencies:
-    tslib "^1.7.1"
-
 "@storybook/addon-actions@^3.2.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.2.0.tgz#e5d7f63fec89cae1b98bbc124694153b7409317f"
@@ -530,6 +506,13 @@ aws-sign2@~0.6.0:
 aws4@^1.2.1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
+
+axios@^0.16.2:
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.16.2.tgz#ba4f92f17167dfbab40983785454b9ac149c3c6d"
+  dependencies:
+    follow-redirects "^1.2.3"
+    is-buffer "^1.1.5"
 
 axobject-query@^0.1.0:
   version "0.1.0"
@@ -2271,7 +2254,7 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
-debug@2, debug@2.6.8, debug@^2.1.1, debug@^2.2.0, debug@^2.6.0, debug@^2.6.3, debug@^2.6.6, debug@^2.6.8:
+debug@2, debug@2.6.8, debug@^2.1.1, debug@^2.2.0, debug@^2.4.5, debug@^2.6.0, debug@^2.6.3, debug@^2.6.6, debug@^2.6.8:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
@@ -3233,6 +3216,12 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
+follow-redirects@^1.2.3:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.2.4.tgz#355e8f4d16876b43f577b0d5ce2668b9723214ea"
+  dependencies:
+    debug "^2.4.5"
+
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -3527,6 +3516,15 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
 "graceful-readlink@>= 1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
+
+grid-styled@^2.0.0-10:
+  version "2.0.0-10"
+  resolved "https://registry.yarnpkg.com/grid-styled/-/grid-styled-2.0.0-10.tgz#d6e8254680027f3cf04a21d2d29e1f89dc24a622"
+  dependencies:
+    prop-types "^15.5.10"
+    styled-components "^2.0.1"
+    styled-system "^1.0.0-9"
+    tag-hoc "^1.0.0-0"
 
 growl@1.9.2:
   version "1.9.2"
@@ -6977,12 +6975,6 @@ rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
 
-rxjs@^5.4.2:
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.4.2.tgz#2a3236fcbf03df57bae06fd6972fd99e5c08fcf7"
-  dependencies:
-    symbol-observable "^1.0.1"
-
 safe-buffer@5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
@@ -7487,7 +7479,7 @@ style-loader@^0.17.0:
   dependencies:
     loader-utils "^1.0.2"
 
-styled-components@^2.1.1:
+styled-components@^2.0.1, styled-components@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.1.2.tgz#bb419978e1287c5d0d88fa9106b2dd75f66a324c"
   dependencies:
@@ -7500,6 +7492,10 @@ styled-components@^2.1.1:
     prop-types "^15.5.4"
     stylis "^3.2.1"
     supports-color "^3.2.3"
+
+styled-system@^1.0.0-9:
+  version "1.0.0-12"
+  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-1.0.0-12.tgz#e2f72a2ef25fa3fc91612433595a23cd6a11f59b"
 
 stylis@^3.2.1:
   version "3.2.8"
@@ -7573,7 +7569,7 @@ sw-toolbox@^3.4.0:
     path-to-regexp "^1.0.1"
     serviceworker-cache-polyfill "^4.0.0"
 
-symbol-observable@^1.0.1, symbol-observable@^1.0.3, symbol-observable@^1.0.4:
+symbol-observable@^1.0.3, symbol-observable@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
@@ -7591,6 +7587,10 @@ table@^3.7.8:
     lodash "^4.0.0"
     slice-ansi "0.0.4"
     string-width "^2.0.0"
+
+tag-hoc@^1.0.0-0:
+  version "1.0.0-0"
+  resolved "https://registry.yarnpkg.com/tag-hoc/-/tag-hoc-1.0.0-0.tgz#bc25d20f99e11431f6876c8013219fbaf85049e4"
 
 tapable@^0.2.7, tapable@~0.2.5:
   version "0.2.8"
@@ -7705,10 +7705,6 @@ trim-right@^1.0.1:
 tryit@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tryit/-/tryit-1.0.3.tgz#393be730a9446fd1ead6da59a014308f36c289cb"
-
-tslib@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.7.1.tgz#bc8004164691923a79fe8378bbeb3da2017538ec"
 
 tty-browserify@0.0.0:
   version "0.0.0"
@@ -8373,7 +8369,3 @@ yauzl@2.4.1:
   resolved "https://registry.yarnpkg.com/yauzl/-/yauzl-2.4.1.tgz#9528f442dab1b2284e58b4379bb194e22e0c4005"
   dependencies:
     fd-slicer "~1.0.1"
-
-zone.js@^0.8.4:
-  version "0.8.16"
-  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.16.tgz#ac31b6c418f88c0f918ad6acd8a402aca9313abb"
