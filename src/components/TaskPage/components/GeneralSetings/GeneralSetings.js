@@ -4,10 +4,10 @@ import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import AutoComplete from 'material-ui/AutoComplete';
 import TimePicker from 'material-ui/TimePicker';
 import BaseText from '../../../common/BaseText/BaseText';
-import api from '../../../../api/api';
+// import api from '../../../../api/api';
+import TimeZone from './components/TimeZone';
 import { isLength } from 'validator';
 import { Flex, Box } from 'grid-styled';
 
@@ -32,12 +32,19 @@ const fieldsRule = [
   {
     field: 'type',
     rules: [isRequired]
+  },
+  {
+    field: 'timeZone',
+    rules: [isRequired]
+  },
+  {
+    field: 'reportTime',
+    rules: [isRequired]
   }
 ];
 
 export default class GeneralSettings extends Component {
   state = {
-    dataSource: [],
     form: {
       enabled: {
         value: false,
@@ -48,6 +55,14 @@ export default class GeneralSettings extends Component {
         errors: []
       },
       type: {
+        value: '',
+        errors: []
+      },
+      timeZone: {
+        value: '',
+        errors: []
+      },
+      reportTime: {
         value: '',
         errors: []
       }
@@ -89,13 +104,7 @@ export default class GeneralSettings extends Component {
       () => this.validate()
     );
   };
-  fetchTimeZone = async value => {
-    const zones = await api.getTimeZoneByName(value);
-    console.log(zones);
-    this.setState({
-      dataSource: zones
-    });
-  };
+
   render() {
     const { changeField, changeSelectField } = this;
     const { form } = this.state;
@@ -147,12 +156,14 @@ export default class GeneralSettings extends Component {
               </SelectField>
             </Box>
             <Box px={2} py={1} width={1 / 2}>
-              <AutoComplete
-                dataSource={this.state.dataSource}
-                filter={AutoComplete.noFilter}
-                onUpdateInput={this.fetchTimeZone}
-                floatingLabelText="Time Zone"
-                fullWidth={true}
+              <TimeZone
+                onChange={changeField('timeZone')}
+                value={form.timeZone.value}
+                errorText={
+                  form.timeZone.errors.length !== 0
+                    ? form.timeZone.errors[0]
+                    : ''
+                }
               />
             </Box>
             <Box px={2} py={1} width={1 / 2}>
@@ -160,6 +171,13 @@ export default class GeneralSettings extends Component {
                 hintText="Start Time"
                 fullWidth={true}
                 format="24hr"
+                onChange={changeField('reportTime')}
+                defaultTime={form.reportTime.value}
+                errorText={
+                  form.reportTime.errors.length !== 0
+                    ? form.reportTime.errors[0]
+                    : ''
+                }
               />
             </Box>
           </Flex>
