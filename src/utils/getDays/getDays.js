@@ -13,5 +13,8 @@ export default (days = []) => {
   if (len === 5 && firstDay === 1 && lastDay === 5) {
     return 'Weekdays';
   }
+  if (len === 7 && firstDay === 1 && lastDay === 7) {
+    return 'Everyday';
+  }
   return sortDays.map(day => Days[day]).join(', ');
 };

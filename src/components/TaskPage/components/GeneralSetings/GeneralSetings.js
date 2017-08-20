@@ -8,14 +8,18 @@ import TimePicker from 'material-ui/TimePicker';
 import BaseText from '../../../common/BaseText/BaseText';
 // import api from '../../../../api/api';
 import TimeZone from './components/TimeZone';
+import DatePicker from 'material-ui/DatePicker';
 import { isLength } from 'validator';
 import { Flex, Box } from 'grid-styled';
+import getDays from '../../../../utils/getDays/getDays';
 
 const Body = styled.div`padding: 10px 20px;`;
 const Form = styled.form`padding-top: 50px;`;
 
 const isRequired = value => {
-  return value ? true : 'This is required.';
+  let haveValue = !!value;
+  if (Array.isArray(value)) haveValue = value.length !== 0;
+  return haveValue ? true : 'This is required.';
 };
 
 const fieldsRule = [
@@ -40,7 +44,31 @@ const fieldsRule = [
   {
     field: 'reportTime',
     rules: [isRequired]
+  },
+  {
+    field: 'from',
+    rules: [isRequired]
+  },
+  {
+    field: 'repeat',
+    rules: [isRequired]
   }
+];
+
+const daysRepeat = [
+  'Every Monday',
+  'Every Tuesday',
+  'Every Wednesday',
+  'Every Thursday',
+  'Every Friday',
+  'Every Saturday',
+  'Every Sunday'
+];
+
+const types = [
+  'Payload Monitoring Report',
+  'Tooth Detection Report',
+  'Fragmentation Report'
 ];
 
 export default class GeneralSettings extends Component {
@@ -64,6 +92,14 @@ export default class GeneralSettings extends Component {
       },
       reportTime: {
         value: '',
+        errors: []
+      },
+      from: {
+        value: '',
+        errors: []
+      },
+      repeat: {
+        value: [],
         errors: []
       }
     }
@@ -141,18 +177,9 @@ export default class GeneralSettings extends Component {
                   form.type.errors.length !== 0 ? form.type.errors[0] : ''
                 }
               >
-                <MenuItem
-                  value="Payload Monitoring Report"
-                  primaryText="Payload Monitoring Report"
-                />
-                <MenuItem
-                  value="Tooth Detection Report"
-                  primaryText="Tooth Detection Report"
-                />
-                <MenuItem
-                  value="Fragmentation Report"
-                  primaryText="Fragmentation Report"
-                />
+                {types.map(type =>
+                  <MenuItem value={type} primaryText={type} key={type} />
+                )}
               </SelectField>
             </Box>
             <Box px={2} py={1} width={1 / 2}>
@@ -179,6 +206,43 @@ export default class GeneralSettings extends Component {
                     : ''
                 }
               />
+            </Box>
+            <Box px={2} py={1} width={1 / 2}>
+              <DatePicker
+                hintText="Start Date"
+                fullWidth={true}
+                onChange={changeField('from')}
+                defaultTime={form.from.value}
+                errorText={
+                  form.from.errors.length !== 0 ? form.from.errors[0] : ''
+                }
+              />
+            </Box>
+            <Box px={2} py={1} width={1 / 2}>
+              <SelectField
+                fullWidth={true}
+                floatingLabelText="Task type"
+                value={form.repeat.value}
+                multiple={true}
+                onChange={changeSelectField('repeat')}
+                selectionRenderer={getDays}
+                errorText={
+                  form.repeat.errors.length !== 0 ? form.repeat.errors[0] : ''
+                }
+              >
+                {daysRepeat.map((type, index) =>
+                  <MenuItem
+                    insetChildren={true}
+                    checked={
+                      form.repeat.value &&
+                      form.repeat.value.indexOf(index + 1) > -1
+                    }
+                    value={index + 1}
+                    primaryText={type}
+                    key={type}
+                  />
+                )}
+              </SelectField>
             </Box>
           </Flex>
         </Form>
