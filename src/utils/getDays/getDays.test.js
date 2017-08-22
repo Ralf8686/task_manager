@@ -17,6 +17,10 @@ describe('Get days', () => {
     expect(getDays([1, 2, 3, 4, 5])).toBe('Weekdays');
   });
 
+  it('with Everyday', () => {
+    expect(getDays([1, 2, 3, 4, 5, 6, 7])).toBe('Everyday');
+  });
+
   it('with zero elements', () => {
     expect(getDays([])).toEqual('');
   });
