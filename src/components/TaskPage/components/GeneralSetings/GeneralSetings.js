@@ -6,12 +6,12 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TimePicker from 'material-ui/TimePicker';
 import BaseText from '../../../common/BaseText/BaseText';
-// import api from '../../../../api/api';
 import TimeZone from './components/TimeZone';
 import DatePicker from 'material-ui/DatePicker';
 import { isLength } from 'validator';
 import { Flex, Box } from 'grid-styled';
 import getDays from '../../../../utils/getDays/getDays';
+import FormBuilder from '../../../../utils/FormBuilder/FormBuilder';
 
 const Body = styled.div`padding: 10px 20px;`;
 const Form = styled.form`padding-top: 50px;`;
@@ -22,9 +22,14 @@ const isRequired = value => {
   return haveValue ? true : 'This is required.';
 };
 
-const fieldsRule = [
+const fieldsForm = [
+  {
+    field: 'enabled',
+    value: false
+  },
   {
     field: 'title',
+    value: '',
     rules: [
       isRequired,
       value =>
@@ -34,22 +39,27 @@ const fieldsRule = [
     ]
   },
   {
+    value: '',
     field: 'type',
     rules: [isRequired]
   },
   {
+    value: '',
     field: 'timeZone',
     rules: [isRequired]
   },
   {
+    value: new Date(),
     field: 'reportTime',
     rules: [isRequired]
   },
   {
+    value: new Date(),
     field: 'from',
     rules: [isRequired]
   },
   {
+    value: [],
     field: 'repeat',
     rules: [isRequired]
   }
@@ -72,73 +82,25 @@ const types = [
 ];
 
 export default class GeneralSettings extends Component {
-  state = {
-    form: {
-      enabled: {
-        value: false,
-        errors: []
-      },
-      title: {
-        value: '',
-        errors: []
-      },
-      type: {
-        value: '',
-        errors: []
-      },
-      timeZone: {
-        value: '',
-        errors: []
-      },
-      reportTime: {
-        value: '',
-        errors: []
-      },
-      from: {
-        value: '',
-        errors: []
-      },
-      repeat: {
-        value: [],
-        errors: []
-      }
-    }
-  };
+  constructor() {
+    super();
+    this.form = new FormBuilder(fieldsForm);
+    this.state = {
+      form: this.form.getForm()
+    };
+  }
   changeField = name => (event, value) => {
     this.pathState(name, value);
   };
   changeSelectField = name => (event, index, value) => {
     this.pathState(name, value);
   };
-  validate = () => {
-    const { form } = this.state;
-    const newForm = { ...form };
-
-    fieldsRule.forEach(({ field, rules }) => {
-      const fieldState = newForm[field];
-      const errors = rules
-        .map(rule => {
-          return rule(fieldState.value);
-        })
-        .filter(error => error !== true);
-      newForm[field] = { ...fieldState, errors };
+  pathState = (field, value) => {
+    this.form.patchField({ field, value });
+    const form = this.form.syncValidate();
+    this.setState({
+      form
     });
-    this.setState({ form: newForm });
-  };
-  pathState = (name, value) => {
-    const oldValue = this.state.form[name];
-    this.setState(
-      {
-        form: {
-          ...this.state.form,
-          [name]: {
-            ...oldValue,
-            value
-          }
-        }
-      },
-      () => this.validate()
-    );
   };
 
   render() {
@@ -162,9 +124,7 @@ export default class GeneralSettings extends Component {
                 floatingLabelText="Task Title"
                 value={form.title.value}
                 onChange={changeField('title')}
-                errorText={
-                  form.title.errors.length !== 0 ? form.title.errors[0] : ''
-                }
+                errorText={form.title.error}
               />
             </Box>
             <Box px={2} py={1} width={1}>
@@ -173,9 +133,7 @@ export default class GeneralSettings extends Component {
                 floatingLabelText="Task type"
                 value={form.type.value}
                 onChange={changeSelectField('type')}
-                errorText={
-                  form.type.errors.length !== 0 ? form.type.errors[0] : ''
-                }
+                errorText={form.type.error}
               >
                 {types.map(type =>
                   <MenuItem value={type} primaryText={type} key={type} />
@@ -186,11 +144,7 @@ export default class GeneralSettings extends Component {
               <TimeZone
                 onChange={changeField('timeZone')}
                 value={form.timeZone.value}
-                errorText={
-                  form.timeZone.errors.length !== 0
-                    ? form.timeZone.errors[0]
-                    : ''
-                }
+                errorText={form.timeZone.error}
               />
             </Box>
             <Box px={2} py={1} width={1 / 2}>
@@ -200,11 +154,7 @@ export default class GeneralSettings extends Component {
                 format="24hr"
                 onChange={changeField('reportTime')}
                 defaultTime={form.reportTime.value}
-                errorText={
-                  form.reportTime.errors.length !== 0
-                    ? form.reportTime.errors[0]
-                    : ''
-                }
+                errorText={form.reportTime.error}
               />
             </Box>
             <Box px={2} py={1} width={1 / 2}>
@@ -212,10 +162,8 @@ export default class GeneralSettings extends Component {
                 hintText="Start Date"
                 fullWidth={true}
                 onChange={changeField('from')}
-                defaultTime={form.from.value}
-                errorText={
-                  form.from.errors.length !== 0 ? form.from.errors[0] : ''
-                }
+                defaultDate={form.from.value}
+                errorText={form.from.error}
               />
             </Box>
             <Box px={2} py={1} width={1 / 2}>
@@ -226,9 +174,7 @@ export default class GeneralSettings extends Component {
                 multiple={true}
                 onChange={changeSelectField('repeat')}
                 selectionRenderer={getDays}
-                errorText={
-                  form.repeat.errors.length !== 0 ? form.repeat.errors[0] : ''
-                }
+                errorText={form.repeat.error}
               >
                 {daysRepeat.map((type, index) =>
                   <MenuItem
