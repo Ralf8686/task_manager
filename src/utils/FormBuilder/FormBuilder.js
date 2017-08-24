@@ -1,6 +1,7 @@
 export default class FormBuilder {
-  constructor(schema) {
+  constructor(schema, asyncValid) {
     this.schema = schema.map(field => ({ ...field, errors: [] }));
+    this.asyncValid = asyncValid;
   }
   getForm() {
     return this.schema.reduce(
@@ -23,7 +24,7 @@ export default class FormBuilder {
     });
     return this.getForm();
   }
-  syncValidate() {
+  async validate() {
     this.schema = this.schema.map(({ value, rules = [], ...other }) => ({
       ...other,
       value,
@@ -34,6 +35,15 @@ export default class FormBuilder {
         })
         .filter(error => error !== true)
     }));
-    return this.getForm();
+
+    const notuniq = await this.asyncValid[0](this.getForm());
+
+    if (notuniq !== true)
+      this.schema = this.schema.map(item => {
+        if (notuniq.field === item.field) {
+          return { ...item, errors: [...item.errors, notuniq.error] };
+        }
+        return item;
+      });
   }
 }

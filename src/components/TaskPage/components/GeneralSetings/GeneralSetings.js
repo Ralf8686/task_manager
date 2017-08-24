@@ -8,6 +8,7 @@ import TimePicker from 'material-ui/TimePicker';
 import BaseText from '../../../common/BaseText/BaseText';
 import TimeZone from './components/TimeZone';
 import DatePicker from 'material-ui/DatePicker';
+import api from '../../../../api/api';
 import { isLength } from 'validator';
 import { Flex, Box } from 'grid-styled';
 import getDays from '../../../../utils/getDays/getDays';
@@ -23,6 +24,7 @@ const isRequired = value => {
 };
 
 const fieldsForm = [
+  { field: 'id', value: null },
   {
     field: 'enabled',
     value: false
@@ -81,10 +83,20 @@ const types = [
   'Fragmentation Report'
 ];
 
+async function checkUniq({ id, title }) {
+  const haveId = await api.isUniqueTaskTitle(title.value);
+  return haveId && id.value !== haveId
+    ? {
+        field: 'title',
+        error: 'Shoud uniq'
+      }
+    : true;
+}
+
 export default class GeneralSettings extends Component {
   constructor() {
     super();
-    this.form = new FormBuilder(fieldsForm);
+    this.form = new FormBuilder(fieldsForm, [checkUniq]);
     this.state = {
       form: this.form.getForm()
     };
@@ -96,10 +108,9 @@ export default class GeneralSettings extends Component {
     this.pathState(name, value);
   };
   pathState = (field, value) => {
-    this.form.patchField({ field, value });
-    const form = this.form.syncValidate();
-    this.setState({
-      form
+    this.setState({ form: this.form.patchField({ field, value }) });
+    this.form.validate().then(() => {
+      this.setState({ form: this.form.getForm() });
     });
   };
 
