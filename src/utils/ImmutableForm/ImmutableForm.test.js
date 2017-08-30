@@ -57,7 +57,7 @@ describe('ImmutableFrom', () => {
     });
   });
 
-  it('validation sync', () => {
+  it('sync validation form with error', () => {
     const form = new ImmutableFrom({
       schema: [
         {
@@ -71,6 +71,46 @@ describe('ImmutableFrom', () => {
       expect(form.getField('name')).toEqual({
         value: '',
         errorText: 'This is required.'
+      })
+    );
+  });
+  it('sync validation form without error', () => {
+    const form = new ImmutableFrom({
+      schema: [
+        {
+          field: 'name',
+          defaultValue: '',
+          rules: [isRequired]
+        }
+      ],
+      values: {
+        name: {
+          value: 'Sem'
+        }
+      }
+    });
+    return form.validate().then(form =>
+      expect(form.getField('name')).toEqual({
+        value: 'Sem',
+        errorText: ''
+      })
+    );
+  });
+
+  it('sync validation form with error', () => {
+    const form = new ImmutableFrom({
+      schema: [
+        {
+          field: 'name',
+          defaultValue: ''
+        }
+      ],
+      asyncValid: [() => Promise.resolve({ field: 'name', error: 'Not uniq' })]
+    });
+    return form.validate().then(form =>
+      expect(form.getField('name')).toEqual({
+        value: '',
+        errorText: 'Not uniq'
       })
     );
   });
