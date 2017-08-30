@@ -5,6 +5,7 @@
   "dependencies": {
     "PubSub": "^3.2.6",
     "axios": "^0.16.2",
+    "bluebird": "^3.5.0",
     "chromedriver": "^2.30.1",
     "date-fns": "^1.28.5",
     "enzyme": "^2.9.1",
@@ -28,7 +29,7 @@
     "enzyme-to-json": "^1.5.1",
     "jest-styled-components": "^4.2.1",
     "nightwatch-commands": "^3.0.0",
-    "react-scripts": "1.0.11",
+    "react-scripts": "1.0.12",
     "react-test-renderer": "^15.6.1",
     "watchman.js": "^0.1.2"
   },
