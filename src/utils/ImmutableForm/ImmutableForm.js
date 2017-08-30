@@ -1,7 +1,7 @@
 export const NoError = Symbol('NoError');
 
 export default class ImmutableForm {
-  constructor({ schema, asyncValid, values = {} }) {
+  constructor({ schema, asyncValid = [], values = {} }) {
     this.schema = schema;
     this.asyncValid = asyncValid;
 
@@ -32,6 +32,9 @@ export default class ImmutableForm {
       }
     });
   }
+  filterError(error) {
+    return error !== NoError;
+  }
   async validate() {
     const form = this.schema.reduce(
       (form, { rules = [], field }) =>
@@ -39,16 +42,17 @@ export default class ImmutableForm {
           field,
           errors: rules
             .map(rule => rule(this.data[field].value))
-            .filter(error => error !== NoError)
+            .filter(this.filterError)
         }),
       this
     );
+    if (this.asyncValid.length === 0) return Promise.resolve(form);
 
     return Promise.all(
       this.asyncValid.map(validation => validation(form.data))
     ).then(result => {
       return result
-        .filter(error => error !== NoError)
+        .filter(this.filterError)
         .reduce(
           (form, { field, error }) =>
             form.patchField({ field, errors: [error] }),
