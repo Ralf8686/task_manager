@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Toggle from 'material-ui/Toggle';
+import memoize from 'lodash/memoize';
 import TextField from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
@@ -12,7 +13,9 @@ import api from '../../../../api/api';
 import { isLength } from 'validator';
 import { Flex, Box } from 'grid-styled';
 import getDays from '../../../../utils/getDays/getDays';
-import FormBuilder from '../../../../utils/FormBuilder/FormBuilder';
+import ImmutableForm, {
+  NoError
+} from '../../../../utils/ImmutableForm/ImmutableForm';
 
 const Body = styled.div`padding: 10px 20px;`;
 const Form = styled.form`padding-top: 50px;`;
@@ -20,48 +23,48 @@ const Form = styled.form`padding-top: 50px;`;
 const isRequired = value => {
   let haveValue = !!value;
   if (Array.isArray(value)) haveValue = value.length !== 0;
-  return haveValue ? true : 'This is required.';
+  return haveValue ? NoError : 'This is required.';
 };
 
-const fieldsForm = [
-  { field: 'id', value: null },
+const schema = [
+  { field: 'id', defaultValue: null },
   {
     field: 'enabled',
-    value: false
+    defaultValue: false
   },
   {
     field: 'title',
-    value: '',
+    defaultValue: '',
     rules: [
       isRequired,
       value =>
         isLength(value, { min: 1, max: 50 })
-          ? true
+          ? NoError
           : 'Task title must be less than 50 characters long.'
     ]
   },
   {
-    value: '',
+    defaultValue: '',
     field: 'type',
     rules: [isRequired]
   },
   {
-    value: '',
+    defaultValue: '',
     field: 'timeZone',
     rules: [isRequired]
   },
   {
-    value: new Date(),
+    defaultValue: new Date(),
     field: 'reportTime',
     rules: [isRequired]
   },
   {
-    value: new Date(),
+    defaultValue: new Date(),
     field: 'from',
     rules: [isRequired]
   },
   {
-    value: [],
+    defaultValue: [],
     field: 'repeat',
     rules: [isRequired]
   }
@@ -88,35 +91,38 @@ async function checkUniq({ id, title }) {
   return haveId && id.value !== haveId
     ? {
         field: 'title',
-        error: 'Shoud uniq'
+        error: 'Should uniq'
       }
-    : true;
+    : NoError;
 }
 
 export default class GeneralSettings extends Component {
-  constructor() {
-    super();
-    this.form = new FormBuilder(fieldsForm, [checkUniq]);
-    this.state = {
-      form: this.form.getForm()
-    };
-  }
-  changeField = name => (event, value) => {
-    this.pathState(name, value);
+  state = {
+    form: new ImmutableForm({ schema, asyncValid: [checkUniq] })
   };
-  changeSelectField = name => (event, index, value) => {
+  changeField = memoize(name => (event, value) => {
     this.pathState(name, value);
-  };
+  });
+  changeSelectField = memoize(name => (event, index, value) => {
+    this.pathState(name, value);
+  });
   pathState = (field, value) => {
-    this.setState({ form: this.form.patchField({ field, value }) });
-    this.form.validate().then(() => {
-      this.setState({ form: this.form.getForm() });
-    });
+    this.setState(
+      { form: this.state.form.patchField({ field, value }) },
+      () => {
+        this.state.form.validate().then(form => {
+          this.setState({ form });
+        });
+      }
+    );
   };
 
   render() {
     const { changeField, changeSelectField } = this;
     const { form } = this.state;
+    const enabled = form.getField('enabled');
+    const reportTime = form.getField('reportTime');
+    const from = form.getField('from');
     return (
       <Body>
         <BaseText size="heading">General Settings</BaseText>
@@ -124,8 +130,8 @@ export default class GeneralSettings extends Component {
           <Flex wrap align="flex-end">
             <Box px={2} py={1} width={1}>
               <Toggle
-                label={`Task ${form.enabled.value ? 'enabled' : 'disabled'}`}
-                toggled={form.enabled.value}
+                label={`Task ${enabled.value ? 'enabled' : 'disabled'}`}
+                toggled={enabled.value}
                 onToggle={changeField('enabled')}
               />
             </Box>
@@ -133,18 +139,16 @@ export default class GeneralSettings extends Component {
               <TextField
                 fullWidth={true}
                 floatingLabelText="Task Title"
-                value={form.title.value}
                 onChange={changeField('title')}
-                errorText={form.title.error}
+                {...form.getField('title')}
               />
             </Box>
             <Box px={2} py={1} width={1}>
               <SelectField
                 fullWidth={true}
                 floatingLabelText="Task type"
-                value={form.type.value}
                 onChange={changeSelectField('type')}
-                errorText={form.type.error}
+                {...form.getField('type')}
               >
                 {types.map(type =>
                   <MenuItem value={type} primaryText={type} key={type} />
@@ -154,8 +158,7 @@ export default class GeneralSettings extends Component {
             <Box px={2} py={1} width={1 / 2}>
               <TimeZone
                 onChange={changeField('timeZone')}
-                value={form.timeZone.value}
-                errorText={form.timeZone.error}
+                {...form.getField('timeZone')}
               />
             </Box>
             <Box px={2} py={1} width={1 / 2}>
@@ -164,8 +167,8 @@ export default class GeneralSettings extends Component {
                 fullWidth={true}
                 format="24hr"
                 onChange={changeField('reportTime')}
-                defaultTime={form.reportTime.value}
-                errorText={form.reportTime.error}
+                defaultTime={reportTime.value}
+                errorText={reportTime.error}
               />
             </Box>
             <Box px={2} py={1} width={1 / 2}>
@@ -173,26 +176,25 @@ export default class GeneralSettings extends Component {
                 hintText="Start Date"
                 fullWidth={true}
                 onChange={changeField('from')}
-                defaultDate={form.from.value}
-                errorText={form.from.error}
+                defaultDate={from.value}
+                errorText={from.error}
               />
             </Box>
             <Box px={2} py={1} width={1 / 2}>
               <SelectField
                 fullWidth={true}
                 floatingLabelText="Task type"
-                value={form.repeat.value}
                 multiple={true}
                 onChange={changeSelectField('repeat')}
                 selectionRenderer={getDays}
-                errorText={form.repeat.error}
+                {...form.getField('repeat')}
               >
                 {daysRepeat.map((type, index) =>
                   <MenuItem
                     insetChildren={true}
                     checked={
-                      form.repeat.value &&
-                      form.repeat.value.indexOf(index + 1) > -1
+                      form.getField('repeat').value &&
+                      form.getField('repeat').value.indexOf(index + 1) > -1
                     }
                     value={index + 1}
                     primaryText={type}
