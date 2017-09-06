@@ -8,11 +8,13 @@ import MenuItem from 'material-ui/MenuItem';
 import TimePicker from 'material-ui/TimePicker';
 import BaseText from '../../../common/BaseText/BaseText';
 import TimeZone from './components/TimeZone';
+import Recipient from './components/Recipient';
 import DatePicker from 'material-ui/DatePicker';
 import api from '../../../../api/api';
-import { isLength } from 'validator';
+import { isLength, isEmail } from 'validator';
 import { Flex, Box } from 'grid-styled';
 import getDays from '../../../../utils/getDays/getDays';
+
 import ImmutableForm, {
   NoError
 } from '../../../../utils/ImmutableForm/ImmutableForm';
@@ -67,6 +69,14 @@ const schema = [
     defaultValue: [],
     field: 'repeat',
     rules: [isRequired]
+  },
+  {
+    defaultValue: [],
+    field: 'recipient',
+    rules: [
+      values =>
+        values.some(email => !isEmail(email)) ? 'Invalid email' : NoError
+    ]
   }
 ];
 
@@ -100,6 +110,7 @@ export default class GeneralSettings extends Component {
   state = {
     form: new ImmutableForm({ schema, asyncValid: [checkUniq] })
   };
+  changeRecipient = value => this.pathState('recipient', value);
   changeField = memoize(name => (event, value) => {
     this.pathState(name, value);
   });
@@ -150,9 +161,9 @@ export default class GeneralSettings extends Component {
                 onChange={changeSelectField('type')}
                 {...form.getField('type')}
               >
-                {types.map(type =>
+                {types.map(type => (
                   <MenuItem value={type} primaryText={type} key={type} />
-                )}
+                ))}
               </SelectField>
             </Box>
             <Box px={2} py={1} width={1 / 2}>
@@ -189,7 +200,7 @@ export default class GeneralSettings extends Component {
                 selectionRenderer={getDays}
                 {...form.getField('repeat')}
               >
-                {daysRepeat.map((type, index) =>
+                {daysRepeat.map((type, index) => (
                   <MenuItem
                     insetChildren={true}
                     checked={
@@ -200,8 +211,14 @@ export default class GeneralSettings extends Component {
                     primaryText={type}
                     key={type}
                   />
-                )}
+                ))}
               </SelectField>
+            </Box>
+            <Box px={2} py={1} width={1}>
+              <Recipient
+                onChange={changeField('recipient')}
+                {...form.getField('recipient')}
+              />
             </Box>
           </Flex>
         </Form>

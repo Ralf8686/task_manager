@@ -42,7 +42,7 @@ export default class TimeZone extends Component {
         filter={AutoComplete.noFilter}
         onUpdateInput={this.fetchTimeZone}
         floatingLabelText="Time Zone"
-        fullWidth={true}
+        fullWidth
         errorText={errorText}
       />
     );
